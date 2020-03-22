@@ -3,7 +3,7 @@
 
     {# Logo #}
     <a href="/" class="flex items-center">
-      <span class="w-64 text-indigo-500">
+      <span class="w-64 h-64 bg-indigo-500 text-white p-12 rounded-full">
         {% include 'icons/logo.svg' %}
       </span>
       <div class="ml-12 leading-none">
@@ -33,7 +33,7 @@
   </div>
 
   {# Mobile Nav #}
-  <nav class="container default-padding 768:hidden" x-show="navOpen">
+  <nav class="container default-padding 768:hidden" x-show.transition="navOpen">
     {% for item in navigation %}
       <a
         class="block border-t py-16 font-700 text-gray-600 hover:text-gray-900"

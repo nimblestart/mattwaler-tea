@@ -1,12 +1,31 @@
 ---
-title: About
+title: Contact
 ---
 
 {% extends 'page.njk' %}
 
 {% block body %}
-  <div class="container default-padding">
-    <h1 class="h1">{{ title }}</h1>
-    <div data-navigation></div>
-  </div>
+  <article class="bg-gray-100 default-padding py-64 768:text-center">
+    <div class="container">
+      <h1 class="h1">Let's <span class="text-indigo-500">get to know me</span> a little better.</h1>
+      <h2 class="mt-16 text-gray-700 mx-auto 768:max-w-640 768:text-20">
+        My name is <span class="font-900">Matt Waler</span> (🐳 + er) and I'm from Broadview Heights, Ohio. I love development, lifting, and the occasional blockbuster.
+      </h2>
+    </div>
+  </article>
+  <article class="container default-padding 768:py-64">
+    <h3 class="h2 768:text-center">I spend my spare time...</h3>
+    <div class="grid grid-cols-1 640:grid-cols-2 gap-64 py-48">
+      {% for hobby in hobbies  %}
+        <div>
+          <div class="w-48 h-48 {{ hobby.color }} text-white p-8 rounded-full">
+            {% include 'icons/' + hobby.icon + '.svg' %}
+          </div>
+          <h4 class="mt-16 h3">{{ hobby.title }}</h4>
+          <p class="mt-8">{{ hobby.body }}</p>
+        </div>
+      {% endfor  %}
+    </div>
+  </article>
+
 {% endblock %}

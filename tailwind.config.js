@@ -1,7 +1,7 @@
 const fontSizes = [14, 16, 18, 20, 24, 30, 36, 42, 48, 60]
 const fontWeights = [400, 700, 900]
 const percents = [25, 50, 100]
-const rems = [1, 8, 12, 16, 24, 32, 48, 56, 64, 96, 128, 180, 256, 320, 480 ]
+const rems = [1, 4, 8, 12, 16, 24, 32, 48, 56, 64, 96, 128, 180, 256, 320, 480 ]
 const screens = [640, 768, 960]
 const viewports = [100]
 
@@ -46,6 +46,16 @@ module.exports = {
     container: false,
   },
   theme: {
+    customForms: theme => ({
+      default: {
+        'input, textarea': {
+          '&:focus': {
+            borderColor: theme("colors.indigo.500"),
+            boxShadow: "0 0 0 3px rgba(102, 126, 234, 0.5)",
+          },
+        },
+      },
+    }),
     extend: {
       colors: {
         primary: '#6085FF',

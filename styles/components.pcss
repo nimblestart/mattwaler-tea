@@ -10,7 +10,7 @@
   @apply text-18 tracking-wide font-700 px-24 py-16 rounded transition-all duration-200;
 
   &:hover {
-    @apply transform -translate-y-2;
+    @apply transform -translate-y-1;
   }
 }
 
@@ -23,5 +23,21 @@
 }
 
 .h1 {
-  @apply text-42 font-700 text-gray-900;
+  @apply text-30 font-900 leading-tight;
+
+  @screen 768 {
+    @apply text-42;
+  }
+}
+
+.h2 {
+  @apply text-24 font-900 leading-tight;
+
+  @screen 768 {
+    @apply text-36;
+  }
+}
+
+.h3 {
+  @apply text-20 font-900 leading-tight;
 }
