@@ -1,7 +1,7 @@
-module.exports = {
-  header: [
-    { text: 'Home', link: '/' },
-    { text: 'About', link: '/about/' },
-    { text: '404', link: '/404.html' },
-  ],
-}
+module.exports = [
+  { text: 'About', link: '/about/' },
+  { text: 'Contact', link: '/contact/' },
+  { text: 'GitHub', link: 'https://github.com/mattwaler' },
+  { text: 'LinkedIn', link: 'https://www.linkedin.com/in/mattwaler/' },
+  { text: 'Services', link: '/services/' },
+]

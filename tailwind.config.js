@@ -1,7 +1,7 @@
-const fontSizes = [14, 16, 18, 20, 24, 30, 36, 42]
-const fontWeights = [400, 700]
+const fontSizes = [14, 16, 18, 20, 24, 30, 36, 42, 48, 60]
+const fontWeights = [400, 700, 900]
 const percents = [25, 50, 100]
-const rems = [1, 8, 16, 24, 32, 48, 64, 320, 480 ]
+const rems = [1, 8, 12, 16, 24, 32, 48, 56, 64, 96, 128, 180, 256, 320, 480 ]
 const screens = [640, 768, 960]
 const viewports = [100]
 
@@ -47,8 +47,12 @@ module.exports = {
   },
   theme: {
     extend: {
-      colors: {},
-      fontFamily: {},
+      colors: {
+        primary: '#6085FF',
+      },
+      fontFamily: {
+        inter: '"Inter", sans-serif',
+      },
     },
     fontSize: fontSizeObject,
     fontWeight: fontWeightObject,

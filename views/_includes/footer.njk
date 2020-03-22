@@ -1,3 +1,5 @@
-<footer class="bg-gray-900 text-white text-center spacing">
-  Copyright Matt Waler
+<footer
+  x-data="{ year: new Date().getFullYear() }"
+  x-text="`© ${year} | Waler Media LLC`"
+  class="default-padding text-center text-14 text-gray-700">
 </footer>

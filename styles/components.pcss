@@ -2,8 +2,24 @@
   @apply max-w-960 mx-auto w-100%;
 }
 
-.spacing {
+.default-padding {
   @apply p-24;
+}
+
+.button {
+  @apply text-18 tracking-wide font-700 px-24 py-16 rounded transition-all duration-200;
+
+  &:hover {
+    @apply transform -translate-y-2;
+  }
+}
+
+.button-primary {
+  @apply button bg-indigo-500 text-white;
+}
+
+.button-secondary {
+  @apply button bg-indigo-100 text-indigo-500;
 }
 
 .h1 {
