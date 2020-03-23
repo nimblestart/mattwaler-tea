@@ -5,7 +5,7 @@ title: Services
 {% extends 'page.njk' %}
 
 {% block body %}
-  <article class="bg-gray-100 default-padding py-64 768:text-center">
+  <article class="default-padding 768:py-64 768:text-center">
     <div class="container">
       <h1 class="h1">Alright, let's <span class="text-indigo-500">talk about services.</span></h1>
       <h2 class="mt-16 text-gray-700 mx-auto 768:max-w-640 768:text-20">
@@ -13,8 +13,7 @@ title: Services
       </h2>
     </div>
   </article>
-  <article class="wrapper py-64">
-    <div class="container default-padding grid items-center gap-64 grid-cols-1 768:grid-cols-2">
+  <article class="container default-padding grid items-center gap-64 grid-cols-1 768:grid-cols-2 768:py-64">
       {% for service in services  %}
         <div>
           <img class="w-100% h-256 object-cover" src="{{ service.image }}" alt="{{ service.title }} image.">
@@ -22,6 +21,5 @@ title: Services
           <p class="mt-8">{{ service.body }}</p>
         </div>
       {% endfor  %}
-    </div>
   </article>
 {% endblock %}
