@@ -12,7 +12,7 @@ module.exports = [
       'If you need a full-blown traditional content management system, I can build an entirely custom solution using Craft CMS.',
   },
   {
-    image: '/images/backend.jpg',
+    image: '/images/deployment.jpg',
     title: 'Deployment',
     body:
       'I am an expert at configuring CI/CD tools like Laravel Forge, Netlify, and GitHub Actions to push new code safely and efficiently.',

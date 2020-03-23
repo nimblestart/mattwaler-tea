@@ -11,3 +11,9 @@ export const run = (element, fn) => {
     matches.forEach(match => fn(match))
   }
 }
+
+export const wait = (duration, fn) => {
+  setTimeout(() => {
+    fn()
+  }, duration)
+}
