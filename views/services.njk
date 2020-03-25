@@ -3,7 +3,7 @@ title: Services
 description: All of the freelance services I provide for my clients.
 ---
 
-{% extends 'page.njk' %}
+{% extends 'layouts/page.njk' %}
 
 {% block body %}
   <article class="default-padding 768:py-64 768:text-center">
@@ -15,12 +15,12 @@ description: All of the freelance services I provide for my clients.
     </div>
   </article>
   <article class="container default-padding grid items-center gap-64 grid-cols-1 768:grid-cols-2 768:py-64">
-      {% for service in services  %}
-        <div>
-          <img class="w-100% h-256 object-cover" src="{{ service.image }}" alt="{{ service.title }} image.">
-          <h2 class="h3 mt-24">{{ service.title }}</h2>
-          <p class="mt-8">{{ service.body }}</p>
-        </div>
-      {% endfor  %}
+    {% for service in services  %}
+      <div>
+        <img class="w-100% h-256 object-cover" src="{{ service.image }}" alt="{{ service.title }} image.">
+        <h2 class="h3 mt-24">{{ service.title }}</h2>
+        <p class="mt-8">{{ service.body }}</p>
+      </div>
+    {% endfor  %}
   </article>
 {% endblock %}
