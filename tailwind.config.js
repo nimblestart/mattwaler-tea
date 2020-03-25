@@ -61,7 +61,7 @@ module.exports = {
         primary: '#6085FF',
       },
       fontFamily: {
-        inter: '"Inter", sans-serif',
+        muli: '"Muli", sans-serif',
       },
     },
     fontSize: fontSizeObject,
