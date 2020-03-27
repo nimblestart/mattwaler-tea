@@ -1,4 +1,5 @@
 import '../styles/_main.pcss'
 import 'alpinejs'
 import './a11y'
+import './carousel'
 import './svelte'
