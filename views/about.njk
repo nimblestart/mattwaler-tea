@@ -10,7 +10,7 @@ description: Learn a little more about me, Matt Waler.
     <div class="container">
       <h1 class="h1">Let's <span class="text-indigo-500">get to know me</span> a little better.</h1>
       <h2 class="mt-16 text-gray-700 mx-auto 768:max-w-640 768:text-20">
-        I'm an Ohio University graduate from Broadview Heights, Ohio. I love development, lifting, and the occasional blockbuster. I like to think I'm decently funny but my friends can assure you that I am not.
+        I'm an Ohio University graduate from Broadview Heights, Ohio. I love development, lifting, and the occasional blockbuster. I like to think I'm decently funny, but my friends can assure you that I am not.
       </h2>
     </div>
   </article>
@@ -19,19 +19,21 @@ description: Learn a little more about me, Matt Waler.
     <div class="swiper-container relative">
       <div class="swiper-wrapper">
         {% for item in carousel  %}
-          <div class="swiper-slide w-auto">
-            {% switch item.type %}
-              {% case 'image' %}
+          {% switch item.type %}
+            {% case 'image' %}
+              <div class="swiper-slide w-auto ">
                 <img class="h-480 rounded shadow my-24" src="{{ item.src }}" alt="{{ item.alt }}">
-              {% case 'video' %}
+              </div>
+            {% case 'video' %}
+              <div class="swiper-slide w-auto hidden 768:block">
                 <video
                   class="mx-auto h-480 rounded shadow my-24 focus:outline-none"
                   controls="true"
                   preload="metadata"
                   src="{{ item.src }}#t=0.01"
                 >
-            {% endswitch %}
-          </div>
+              </div>
+          {% endswitch %}
         {% endfor  %}
       </div>
       <div class="swiper-scrollbar"></div>
