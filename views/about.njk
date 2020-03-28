@@ -22,13 +22,13 @@ description: Learn a little more about me, Matt Waler.
           <div class="swiper-slide w-auto">
             {% switch item.type %}
               {% case 'image' %}
-                <img class="h-480 rounded shadow my-24" src="{{ item.src }}" alt="">
+                <img class="h-480 rounded shadow my-24" src="{{ item.src }}" alt="{{ item.alt }}">
               {% case 'video' %}
                 <video
                   class="mx-auto h-480 rounded shadow my-24 focus:outline-none"
-                  controls
+                  controls="true"
                   preload="metadata"
-                  src="{{ item.src }}"
+                  src="{{ item.src }}#t=0.01"
                 >
             {% endswitch %}
           </div>

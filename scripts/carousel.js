@@ -3,6 +3,14 @@ import Swiper from 'swiper'
 
 run('.swiper-container', carousel => {
   const swiper = new Swiper(carousel, {
+    breakpoints: {
+      0: {
+        centeredSlides: true,
+      },
+      640: {
+        centeredSlides: false,
+      },
+    },
     grabCursor: true,
     scrollbar: {
       draggable: true,
