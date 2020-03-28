@@ -15,31 +15,6 @@ description: Learn a little more about me, Matt Waler.
     </div>
   </article>
 
-  <article class="container default-padding">
-    <div class="swiper-container relative">
-      <div class="swiper-wrapper">
-        {% for item in carousel  %}
-          {% switch item.type %}
-            {% case 'image' %}
-              <div class="swiper-slide w-auto ">
-                <img class="h-480 rounded shadow my-24" src="{{ item.src }}" alt="{{ item.alt }}">
-              </div>
-            {% case 'video' %}
-              <div class="swiper-slide w-auto hidden 768:block">
-                <video
-                  class="mx-auto h-480 rounded shadow my-24 focus:outline-none"
-                  controls="true"
-                  preload="metadata"
-                  src="{{ item.src }}#t=0.01"
-                >
-              </div>
-          {% endswitch %}
-        {% endfor  %}
-      </div>
-      <div class="swiper-scrollbar"></div>
-    </div>
-  </article>
-
   <article class="container default-padding 768:py-64">
     <h3 class="h2 768:text-center">I spend my spare time...</h3>
     <div class="grid grid-cols-1 640:grid-cols-2 gap-64 pt-48">
