@@ -17,9 +17,7 @@
   },
   "browserslist": "> 2%",
   "dependencies": {
-    "alpinejs": "^2.2.1",
-    "axios": "^0.19.2",
-    "swiper": "^5.3.6"
+    "alpinejs": "^2.2.1"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.9.0",
