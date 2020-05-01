@@ -8,7 +8,7 @@ import { terser } from 'rollup-plugin-terser'
 const prod = process.env.NODE_ENV == 'production'
 
 export default {
-  input: 'scripts/_main.js',
+  input: 'src/scripts/_main.js',
   output: {
     sourcemap: false,
     format: 'iife',
@@ -28,7 +28,7 @@ export default {
     }),
     resolve({
       browser: true,
-      dedupe: importee =>
+      dedupe: (importee) =>
         importee === 'svelte' || importee.startsWith('svelte/'),
     }),
     commonjs(),

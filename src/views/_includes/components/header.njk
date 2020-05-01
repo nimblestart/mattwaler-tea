@@ -1,0 +1,44 @@
+<header x-data="{ navOpen: false }">
+  <div class="container default-padding h-128 flex justify-between items-center">
+
+    {# Logo #}
+    <a href="/" class="flex items-center">
+      <span class="w-48 h-48 bg-indigo-500 text-white rounded-full p-8 768:p-12 768:w-64 768:h-64">
+        {% include 'icons/logo.svg' %}
+      </span>
+      <div class="ml-12 leading-none">
+        <span class="block font-900 text-24 768:text-30">mattwaler</span>
+        <span class="text-14 block text-gray-600">Fullstack Web Developer</span>
+      </div>
+    </a>
+
+    {# Right Nav #}
+    <nav class="flex items-center">
+      {% for item in navigation %}
+        <a
+          class="hidden ml-32 font-700 text-gray-600 hover:text-gray-900 768:block"
+          href="{{ item.link }}">
+          {{ item.text }}
+        </a>
+      {% endfor  %}
+      <button @click="navOpen = !navOpen" class="w-24 focus:outline-none text-gray-600 hover:text-gray-900 768:hidden">
+        <span x-show="!navOpen">{% include 'icons/menu.svg' %}</span>
+        <span x-show="navOpen">{% include 'icons/close.svg' %}</span>
+      </button>
+    </nav>
+  </div>
+
+  {# Mobile Nav #}
+  <nav class="container default-padding 768:hidden" x-show.transition="navOpen">
+    {% for item in navigation %}
+      <a
+        class="block border-t py-16 font-700 text-gray-600"
+        href="{{ item.link }}">
+        {{ item.text }}
+      </a>
+    {% endfor  %}
+  </nav>
+  <nav>
+
+  </nav>
+</header>

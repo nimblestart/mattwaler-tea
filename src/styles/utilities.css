@@ -1,0 +1,27 @@
+.container {
+  @apply max-w-960 mx-auto w-100%;
+}
+
+.default-padding {
+  @apply p-24;
+}
+
+.h1 {
+  @apply text-36 font-900 leading-tight;
+
+  @screen 768 {
+    @apply text-42;
+  }
+}
+
+.h2 {
+  @apply text-24 font-900 leading-tight;
+
+  @screen 768 {
+    @apply text-30;
+  }
+}
+
+.h3 {
+  @apply text-20 font-900 leading-tight;
+}

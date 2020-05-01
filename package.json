@@ -1,16 +1,12 @@
 {
-  "name": "static-starter",
-  "description": "A starter template for building wonderful static sites.",
+  "name": "my-website",
   "author": "Matt Waler",
   "license": "UNLICENSED",
-  "homepage": "https://github.com/mattwaler/static-starter",
-  "repository": "https://github.com/mattwaler/static-starter",
-  "bugs": "https://github.com/mattwaler/static-starter/issues",
   "scripts": {
     "build": "cross-env NODE_ENV=production npm-run-all clean -p build:*",
-    "build:11ty": "eleventy",
+    "build:11ty": "eleventy --quiet",
     "build:rollup": "rollup -c",
-    "clean": "del-cli dist",
+    "clean": "rm -rf dist",
     "dev": "npm-run-all clean build:* -p dev:*",
     "dev:11ty": "eleventy --serve --quiet",
     "dev:rollup": "rollup -c -w"
@@ -28,7 +24,6 @@
     "@tailwindcss/custom-forms": "^0.2.1",
     "autoprefixer": "^9.6.2",
     "cross-env": "^6.0.3",
-    "del-cli": "^3.0.0",
     "npm-run-all": "^4.1.5",
     "postcss-import": "^12.0.1",
     "postcss-nested": "^4.2.1",
