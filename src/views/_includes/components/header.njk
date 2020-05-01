@@ -3,11 +3,11 @@
 
     {# Logo #}
     <a href="/" class="flex items-center">
-      <span class="w-48 h-48 bg-indigo-500 text-white rounded-full p-8 768:p-12 768:w-64 768:h-64">
-        {% include 'icons/logo.svg' %}
+      <span class="w-64">
+        {% include 'icons/whale-logo.svg' %}
       </span>
       <div class="ml-12 leading-none">
-        <span class="block font-900 text-24 768:text-30">mattwaler</span>
+        <span class="block font-900 text-20">mattwaler</span>
         <span class="text-14 block text-gray-600">Fullstack Web Developer</span>
       </div>
     </a>
@@ -32,7 +32,7 @@
   <nav class="container default-padding 768:hidden" x-show.transition="navOpen">
     {% for item in navigation %}
       <a
-        class="block border-t py-16 font-700 text-gray-600"
+        class="block border-b-2 py-16 font-700 text-gray-600 {{ 'border-t-2' if loop.first }}"
         href="{{ item.link }}">
         {{ item.text }}
       </a>

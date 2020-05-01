@@ -1,6 +1,6 @@
 const fontSizes = [14, 16, 18, 20, 24, 30, 36, 42, 48, 60]
 const fontWeights = [400, 700, 900]
-const percents = [25, 50, 100]
+const percents = [25, 40, 50, 60, 100]
 const rems = [1, 4, 8, 12, 16, 24, 32, 48, 56, 64, 96, 128, 180, 256, 320, 480]
 const screens = [640, 768, 960]
 const viewports = [100]
@@ -70,10 +70,11 @@ module.exports = {
     }),
     extend: {
       colors: {
-        primary: '#6085FF',
+        primary: '#8BB7F0',
+        'primary-dark': '#4E7AB5',
       },
       fontFamily: {
-        muli: '"Muli", sans-serif',
+        inter: '"Inter", sans-serif',
       },
     },
     fontSize: fontSizeObject,

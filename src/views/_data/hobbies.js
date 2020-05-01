@@ -2,27 +2,27 @@ module.exports = [
   {
     title: 'Hitting the Gym',
     body:
-      'I try to hit the gym 3-4 times per week to keep in shape. I used to be a twig, and every day I work towards looking more and more like Brad Pitt in Fight Club.',
+      'I try to hit the gym a few times a week to build those vanity muscles. My goal is to look like Brad Pitt in Fight Club.',
   },
   {
     title: 'Watching Movies',
     body:
-      'I absolutely love movies. My favorite film as to date is Jojo Rabbit. A few other close contenders are 1917, Baby Driver, and The Gentlemen.',
+      'I absolutely love movies. My favorite film to date is Jojo Rabbit. Baby Driver is a close second place.',
   },
   {
     title: 'Listening to Podcasts',
     body:
-      'When doing mundane tasks, I usually toss in my headphones and try to learn from others. My favorite podcasts to date are Up First by NPR and Fullstack Radio by Adam Wathan.',
+      'When doing mundane tasks, I usually toss in my headphones and try to learn from others. I love Syntax and Fullstack Radio.',
   },
   {
     title: 'Developing & Improving',
     body:
-      'I love writing code. I am constantly on the lookout for new tools and frameworks. You will often catch me researching, practicing, and trying out the latest and greatest to stay at the top of my game.',
+      'You will often catch me researching, practicing, and trying out the latest and greatest to stay at the top of my game.',
   },
   {
     title: 'Listening to Audiobooks',
     body:
-      'I have a hard time physically reading books, but I love listening to them. My favorite book to date has been Thinking in Bets by Annie Duke. I have also embraced minimalism thanks to Marie Condo.',
+      'Reading is difficult for me, but I love audiobooks. My favorite listen so far has been Thinking in Bets by Annie Duke.',
   },
   {
     title: 'Playing Ping-Pong',

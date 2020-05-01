@@ -1,20 +1,43 @@
 ---
-title: Freelance Web Development
+title: Web Developer
 description: I am Matt Waler, a freelance fullstack developer providing fullstack consulting and development.
 ---
 
-{% extends 'layouts/page.njk' %}
+{% extends 'components/page.njk' %}
 
 {% block body %}
-  <article class="container default-padding 768:text-center 768:py-64">
-    <img class="w-180 mx-auto rounded-full shadow-lg 768:w-256" src="/images/me.jpg" alt="A handsome man called Matt Waler.">
-    <h1 class="mt-24 h1">I help people build <wbr><span class="text-indigo-500">dope websites.</span></h1>
-    <h2 class="mt-8 text-gray-700 mx-auto 768:text-20 768:max-w-640">
-      I provide consulting, development, and deployment for modern web applications. I also love burritos.
-    </h2>
-    <nav class="mt-24 flex items-center 768:justify-center">
-      <a class="mr-8 button-primary" href="/contact/">Contact</a>
-      <a class="ml-8 button-secondary" href="/services/">Services</a>
-    </nav>
+  <article class="container flex flex-wrap items-center justify-center px-24 pt-32 pb-64 768:pt-64 768:pb-96">
+    <figure class="w-50% 768:w-40% 768:pr-64">
+      <img class="mx-auto rounded-full shadow-lg" src="/images/me.jpg" alt="A handsome man called Matt Waler.">
+    </figure>
+    <div class="w-100% mt-32 768:mt-0 768:w-60%">
+      <h1 class="h1">The most easy going web developer you'll ever meet.</h1>
+      <h2 class="mt-16 text-gray-700 768:text-20">
+        I develop, deploy, and teach all things modern web development. I also love a good burrito.
+      </h2>
+      <nav class="mt-32 flex items-center">
+        <a class="mr-8 button-primary" href="/contact/">Contact</a>
+        <a class="ml-8 button-secondary" href="/services/">Services</a>
+      </nav>
+    </div>
   </article>
+
+  <div class="bg-gray-100 border-b-2 border-t-2 px-24 py-48">
+    <article class="container">
+      <div class="max-w-640">
+        <h3 class="h2">A Little Bit About Me</h3>
+        <p class="mt-16">I'm an Ohio University graduate from Broadview Heights, Ohio. I love development, lifting, and the occasional blockbuster. I like to think I'm decently funny, but my friends can assure you that I am not.</p>
+        <p class="mt-16">Some of my favorite hobbies include:</p>
+      </div>
+      <div class="mt-24 grid grid-cols-1 gap-32 640:gap-64 640:grid-cols-2 768:grid-cols-3">
+        {% for hobby in hobbies  %}
+          <div>
+            <h4 class="mt-16 font-900">{{ hobby.title }}</h4>
+            <p class="mt-8 text-14">{{ hobby.body }}</p>
+          </div>
+        {% endfor  %}
+      </div>
+    </article>
+  </div>
+
 {% endblock %}
