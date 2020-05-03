@@ -1,5 +1,7 @@
-/about            /
-/MattWaler.pdf    /skills
-/posts/           /
-/posts/*          /
-/skills/          /services/
+/about              /#about
+/MattWaler.pdf      /#services
+/posts/             /
+/posts/*            /
+/skills/            /#services
+/services/          /#services
+/contact            /#contact

@@ -1,5 +1,6 @@
+<div class="h-12 bg-indigo-500"></div>
 <header x-data="{ navOpen: false }">
-  <div class="container default-padding h-128 flex justify-between items-center">
+  <div class="container p-24 h-128 flex justify-between items-center">
 
     {# Logo #}
     <a href="/" class="flex items-center">
@@ -16,8 +17,8 @@
     <nav class="flex items-center">
       {% for item in navigation %}
         <a
-          class="hidden ml-32 font-700 text-gray-600 hover:text-gray-900 768:block"
-          href="{{ item.link }}">
+          class="cursor-pointer hidden ml-32 font-700 text-gray-600 hover:text-gray-900 768:block"
+          data-scroll="{{ item.link }}">
           {{ item.text }}
         </a>
       {% endfor  %}
@@ -29,11 +30,11 @@
   </div>
 
   {# Mobile Nav #}
-  <nav class="container default-padding 768:hidden" x-show.transition="navOpen">
+  <nav class="container p-24 768:hidden" x-show.transition="navOpen">
     {% for item in navigation %}
       <a
-        class="block border-b-2 py-16 font-700 text-gray-600 {{ 'border-t-2' if loop.first }}"
-        href="{{ item.link }}">
+        class="cursor-pointer block border-b-2 py-16 font-700 text-gray-600 {{ 'border-t-2' if loop.first }}"
+        data-scroll="{{ item.link }}">
         {{ item.text }}
       </a>
     {% endfor  %}

@@ -9,3 +9,31 @@
 .button-secondary {
   @apply button bg-indigo-100 text-indigo-500;
 }
+
+.container {
+  @apply max-w-960 mx-auto w-100%;
+}
+
+.h1 {
+  @apply text-36 font-900 leading-tight;
+
+  @screen 768 {
+    @apply text-42;
+  }
+}
+
+.h2 {
+  @apply text-24 font-900 leading-tight;
+
+  @screen 768 {
+    @apply text-30;
+  }
+}
+
+.h3 {
+  @apply text-20 font-900 leading-tight;
+}
+
+.wrapper {
+  @apply px-24 py-64;
+}
