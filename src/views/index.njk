@@ -9,7 +9,10 @@ description: I am Matt Waler, a freelance fullstack developer providing fullstac
   <article class="wrapper">
     <div class="container flex flex-wrap items-center">
       <figure class="mx-auto w-50% 768:w-40% 768:pr-64">
-        <img class="mx-auto rounded-full shadow-lg" src="/images/me.jpg" alt="A handsome man called Matt Waler.">
+        <img
+          class="mx-auto rounded-lg shadow-lg"
+          src="/images/me.jpg"
+          alt="Matt Waler's handsome face.">
       </figure>
       <div class="w-100% mt-32 768:mt-0 768:w-60%">
         <h1 class="h1">The most easy-going web developer you'll ever meet.</h1>
@@ -47,7 +50,7 @@ description: I am Matt Waler, a freelance fullstack developer providing fullstac
       <div class="mt-64 grid gap-96 768:grid-cols-2">
         {% for project in projects  %}
           <div>
-            <img class="shadow-lg rounded-lg" src="{{ project.image }}" alt="placeholder">
+            <img class="shadow-lg rounded-lg" src="{{ project.image }}" alt="{{ project.title }} website screenshot.">
             <h3 class="mt-32 h3">{{ project.title }}</h3>
             <p class="mt-16">{{ project.description }}</p>
             <a
