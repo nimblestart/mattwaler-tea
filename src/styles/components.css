@@ -1,5 +1,5 @@
 .button {
-  @apply text-18 tracking-wide font-700 px-24 py-16 rounded;
+  @apply text-14 uppercase tracking-wide font-900 px-24 py-16 rounded;
 }
 
 .button-primary {
