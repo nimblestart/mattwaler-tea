@@ -8,7 +8,7 @@ import { terser } from 'rollup-plugin-terser'
 const prod = process.env.NODE_ENV == 'production'
 
 export default {
-  input: 'src/scripts/_main.js',
+  input: 'src/_bundle/main.js',
   output: {
     sourcemap: false,
     format: 'iife',

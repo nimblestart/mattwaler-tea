@@ -69,10 +69,6 @@ module.exports = {
       },
     }),
     extend: {
-      colors: {
-        primary: '#8BB7F0',
-        'primary-dark': '#4E7AB5',
-      },
       fontFamily: {
         inter: '"Inter", sans-serif',
       },
@@ -91,4 +87,10 @@ module.exports = {
     width: spacing,
   },
   plugins: [require('@tailwindcss/custom-forms')],
+  purge: [
+    './src/**/*.js',
+    './src/**/*.njk',
+    './src/**/*.svelte',
+    './src/**/*.svg',
+  ],
 }
