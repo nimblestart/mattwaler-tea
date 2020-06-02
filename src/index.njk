@@ -87,7 +87,7 @@ description: I am Matt Waler, a freelance fullstack developer providing fullstac
   <article id="contact" class="wrapper">
     <form
       x-data="{ submitted: false }"
-      x-init="submitted = window.location.search.includes('?contact')"
+      x-init="submitted = window.location.search.includes(`?contact`)"
       netlify
       name="contact"
       method="post"

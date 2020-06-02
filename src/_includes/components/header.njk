@@ -1,6 +1,6 @@
 <template
   x-data="{ submitted: false }"
-  x-init="submitted = window.location.search.includes('?contact')"
+  x-init="submitted = window.location.search.includes(`?contact`)"
   x-if="submitted"
 >
   <div class="p-24 bg-green-500 text-white font-700">
