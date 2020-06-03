@@ -84,13 +84,22 @@ module.exports = {
     minWidth: spacing,
     padding: spacing,
     screens: screenObject,
+    space: remObject,
     width: spacing,
   },
-  plugins: [require('@tailwindcss/custom-forms')],
+  plugins: [
+    require('@tailwindcss/custom-forms'),
+    require('tailwindcss-dark-mode')(),
+  ],
   purge: [
     './src/**/*.js',
     './src/**/*.njk',
     './src/**/*.svelte',
     './src/**/*.svg',
   ],
+  variants: {
+    backgroundColor: ['dark', 'hover'],
+    borderColor: ['dark', 'hover'],
+    textColor: ['dark', 'dark-hover', 'hover'],
+  },
 }

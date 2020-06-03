@@ -17,7 +17,7 @@ description: I am Matt Waler, a freelance fullstack developer providing fullstac
       </figure>
       <div class="flex-1 pt-32 768:pt-0 768:pl-64">
         <h1 class="h1">The most easy-going web developer you'll ever meet.</h1>
-        <h2 class="mt-16 text-gray-700 768:text-20">
+        <h2 class="mt-16 text-gray-700 dark:text-gray-400 768:text-20">
           I develop, deploy, and teach all things modern web development. I also love a good burrito.
         </h2>
         <nav class="mt-32 flex items-center">
@@ -29,7 +29,7 @@ description: I am Matt Waler, a freelance fullstack developer providing fullstac
     <div class="h-48 hidden 768:block"></div>
   </article>
 
-  <article id="services" class="wrapper bg-gray-100 border-b-2 border-t-2">
+  <article id="services" class="wrapper bg-gray-100 dark:bg-gray-800 border-b-2 border-t-2">
     <div class="container">
       <h3 class="h2">What I do for a living.</h3>
       <p class="mt-16 max-w-480">Listed below you will find a comprehensive list of the skills and services that I provide for my clients.</p>
@@ -50,23 +50,18 @@ description: I am Matt Waler, a freelance fullstack developer providing fullstac
       <p class="mt-16 max-w-480">A few pet projects that I spend my spare development time on. Check them out or view the source code on GitHub.</p>
       <div class="mt-64 grid gap-96 768:grid-cols-2">
         {% for project in projects %}
-          <div>
+          <a target="_blank" href="{{ project.link }}">
             <img class="shadow-lg rounded-lg" src="{{ project.image }}" alt="{{ project.title }} website screenshot.">
             <h3 class="mt-32 h3">{{ project.title }}</h3>
             <p class="mt-16">{{ project.description }}</p>
-            <a
-              class="leading-none inline-block border-b-2 border-gray-900 font-700 block mt-16"
-              target="_blank"
-              href="{{ project.link }}">
-              View Project
-            </a>
-          </div>
+            <p class="leading-none underline font-700 mt-16">View Project</p>
+          </a>
         {% endfor %}
       </div>
     </div>
   </article>
 
-  <div id="about" class="wrapper bg-gray-100 border-b-2 border-t-2">
+  <div id="about" class="wrapper bg-gray-100 dark:bg-gray-800 border-b-2 border-t-2">
     <article class="container">
       <div class="max-w-640">
         <h3 class="h2">A little bit about me.</h3>
@@ -105,15 +100,15 @@ description: I am Matt Waler, a freelance fullstack developer providing fullstac
       <div x-show="!submitted" class="mt-48 grid grid-cols-2 gap-32">
         <label class="col-span-2 640:col-span-1">
           <span class="block">Name:</span>
-          <input name="name" class="mt-8 form-input w-100%" type="text" required>
+          <input name="name" class="dark:text-gray-900 mt-8 form-input w-100%" type="text" required>
         </label>
         <label class="col-span-2 640:col-span-1">
           <span class="block">Email:</span>
-          <input name="email" class="mt-8 form-input w-100%" type="email" required>
+          <input name="email" class="dark:text-gray-900 mt-8 form-input w-100%" type="email" required>
         </label>
         <label class="col-span-2">
           <span class="block">Message:</span>
-          <textarea class="mt-8 form-textarea w-100%"  name="message" rows="7" required></textarea>
+          <textarea class="dark:text-gray-900 mt-8 form-textarea w-100%"  name="message" rows="7" required></textarea>
         </label>
         <div class="col-span-2">
           <button type="submit" class="button-primary">Submit</button>

@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+  x-data="{ darkMode: true }"
+  lang="en"
+  :class="{ 'mode-dark': darkMode }"
+>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     {% block head %}{% endblock %}
   </head>
-  <body class="flex flex-col min-h-100vh">
+  <body class="flex flex-col min-h-100vh dark:bg-gray-900 dark:text-white">
     {% include 'components/header.njk' %}
     <div data-contact></div>
     <main class="flex-grow">
