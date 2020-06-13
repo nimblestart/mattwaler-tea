@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html
   x-data="{ darkMode: true }"
+  x-init="darkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches"
   lang="en"
   :class="{ 'mode-dark': darkMode }"
 >
