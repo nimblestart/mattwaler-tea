@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html
-  x-data="{ darkMode: true }"
-  x-init="darkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches"
   lang="en"
   :class="{ 'mode-dark': darkMode }"
+  x-data="{ darkMode: null }"
+  x-show="darkMode !== null"
+  x-init="() => {
+    const scheme = localStorage.getItem(`colorScheme`)
+    if (scheme == `light`) return darkMode = false
+    if (scheme == `dark`) return darkMode = true
+    return darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  }"
 >
   <head>
     <meta charset="UTF-8">

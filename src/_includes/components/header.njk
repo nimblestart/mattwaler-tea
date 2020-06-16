@@ -21,9 +21,8 @@
   #blacklivesmatter
 </div>
 
-
 <header>
-  <div class="container px-24 pt-48 flex justify-center items-center">
+  <div class="container px-24 pt-48 flex justify-between items-center">
 
     {# Logo #}
     <div class="flex items-center">
@@ -35,5 +34,21 @@
         <span class="text-14 block text-gray-600 dark:text-gray-400">Web Developer</span>
       </div>
     </div>
+
+    <button
+      class="w-48 h-48"
+      @click="
+        darkMode
+          ? localStorage.setItem(`colorScheme`, `light`)
+          : localStorage.setItem(`colorScheme`, `dark`)
+        darkMode = !darkMode;
+      ">
+      <span x-show="darkMode">
+        {% include 'icons/light-mode.svg' %}
+      </span>
+      <span x-show="!darkMode">
+        {% include 'icons/dark-mode.svg' %}
+      </span>
+    </button>
 
   </header>
