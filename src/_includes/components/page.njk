@@ -1,31 +1,44 @@
 <!DOCTYPE html>
-<html
-  lang="en"
-  :class="{ 'mode-dark': darkMode }"
-  x-data="{ darkMode: null }"
-  x-show="darkMode !== null"
-  x-init="() => {
-    const scheme = localStorage.getItem(`colorScheme`)
-    if (scheme == `light`) return darkMode = false
-    if (scheme == `dark`) return darkMode = true
-    return darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-  }"
->
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Matt Waler | {{ title }}</title>
     <meta name="description" content="{{ description }}">
-    {% include 'components/favicons.njk' %}
-    <script defer src="/assets/main.bundle.js"></script>
     <link rel="stylesheet" href="/assets/main.bundle.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    {% block head %}{% endblock %}
+    <script defer src="/assets/main.bundle.js"></script>
+    {% include 'components/favicons.njk' %}
   </head>
-  <body class="flex flex-col min-h-100vh dark:bg-gray-900 dark:text-white">
+
+  <script>
+    function darkMode() {
+      const scheme = localStorage.getItem('colorScheme')
+      if (scheme === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return { darkMode: true }
+      }
+      if (scheme === 'light' || window.matchMedia('(prefers-color-scheme: light)').matches) {
+        return { darkMode: false }
+      }
+      return { darkMode: true }
+    }
+
+    function submittedForm() {
+      if (window.location.search.includes(`?contact`)) {
+        return { submittedForm: true }
+      }
+      return { submittedForm: false }
+    }
+  </script>
+
+  <body
+    x-data="{...darkMode(), ...submittedForm()}"
+    x-show="darkMode !== null"
+    class="flex flex-col min-h-100vh "
+    :class="darkMode ? 'bg-gray-900 text-white' : ''"
+  >
     {% include 'components/header.njk' %}
-    <div data-contact></div>
     <main class="flex-grow">
       {% block body %}{% endblock %}
     </main>

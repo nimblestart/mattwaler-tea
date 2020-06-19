@@ -17,7 +17,10 @@ description: I am Matt Waler, a freelance fullstack developer providing fullstac
       </figure>
       <div class="flex-1 pt-32 768:pt-0 768:pl-64">
         <h1 class="h1">The most easy-going web developer you'll ever meet.</h1>
-        <h2 class="mt-16 text-gray-700 dark:text-gray-400 768:text-20">
+        <h2
+          class="mt-16 768:text-20"
+          :class="darkMode ? 'text-gray-400' : 'text-gray-700'"
+        >
           I develop, deploy, and teach all things modern web development. I also love a good burrito.
         </h2>
         <nav class="mt-32 flex items-center">
@@ -29,7 +32,11 @@ description: I am Matt Waler, a freelance fullstack developer providing fullstac
     <div class="h-48 hidden 768:block"></div>
   </article>
 
-  <article id="services" class="wrapper bg-gray-100 border-b-2 border-t-2 dark:bg-gray-900 dark:border-gray-800">
+  <article
+    id="services"
+    class="wrapper border-b-2 border-t-2"
+    :class="darkMode ? 'bg-gray-900 border-gray-800' : 'bg-gray-100'"
+  >
     <div class="container">
       <h3 class="h2">What I do for a living.</h3>
       <p class="mt-16 max-w-480">Listed below you will find a comprehensive list of the skills and services that I provide for my clients.</p>
@@ -61,7 +68,11 @@ description: I am Matt Waler, a freelance fullstack developer providing fullstac
     </div>
   </article>
 
-  <div id="about" class="wrapper bg-gray-100 border-b-2 border-t-2 dark:bg-gray-900 dark:border-gray-800">
+  <div
+    id="about"
+    class="wrapper border-b-2 border-t-2"
+    :class="darkMode ? 'bg-gray-900 border-gray-800' : 'bg-gray-100'"
+  >
     <article class="container">
       <div class="max-w-640">
         <h3 class="h2">A little bit about me.</h3>
@@ -81,34 +92,50 @@ description: I am Matt Waler, a freelance fullstack developer providing fullstac
 
   <article id="contact" class="wrapper">
     <form
-      x-data="{ submitted: false }"
-      x-init="submitted = window.location.search.includes(`?contact`)"
       netlify
       name="contact"
       method="post"
       aria-label="contact form"
       action="/?contact"
       class="container">
-      <div x-show="submitted" class="max-w-640">
+      <div x-show="submittedForm" class="max-w-640">
         <h3 class="h2">Thank you for reaching out!</h3>
         <p class="mt-16">I will be in touch very shortly, my friend.</p>
       </div>
-      <div x-show="!submitted" class="max-w-640">
+      <div x-show="!submittedForm" class="max-w-640">
         <h3 class="h2">Get in touch with me.</h3>
         <p class="mt-16">Fill out the form below, and I'll be in contact as soon as possible. Thank you so much for taking the time to check me out.</p>
       </div>
-      <div x-show="!submitted" class="mt-48 grid grid-cols-2 gap-32">
+      <div x-show="!submittedForm" class="mt-48 grid grid-cols-2 gap-32">
         <label class="col-span-2 640:col-span-1">
           <span class="block">Name:</span>
-          <input name="name" class="dark:text-gray-900 mt-8 form-input w-100%" type="text" required>
+          <input
+            name="name"
+            type="text"
+            required
+            class="mt-8 form-input w-100%"
+            :class="darkMode ? 'text-gray-900' : ''"
+          >
         </label>
         <label class="col-span-2 640:col-span-1">
           <span class="block">Email:</span>
-          <input name="email" class="dark:text-gray-900 mt-8 form-input w-100%" type="email" required>
+          <input
+            name="email"
+            type="email"
+            required
+            class="mt-8 form-input w-100%"
+            :class="darkMode ? 'text-gray-900' : ''"
+          >
         </label>
         <label class="col-span-2">
           <span class="block">Message:</span>
-          <textarea class="dark:text-gray-900 mt-8 form-textarea w-100%"  name="message" rows="7" required></textarea>
+          <textarea
+            name="message"
+            rows="7"
+            required
+            class="mt-8 form-textarea w-100%"
+            :class="darkMode ? 'text-gray-900' : ''"
+          ></textarea>
         </label>
         <div class="col-span-2">
           <button type="submit" class="button-primary">Submit</button>

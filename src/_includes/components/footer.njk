@@ -1,14 +1,18 @@
 <footer
-  x-data="{ year: new Date().getFullYear() }"
-  class="p-24 mx-auto text-14 text-gray-700 dark:text-gray-600 768:inline-flex items-center"
+  class="p-24 mx-auto text-14 768:inline-flex items-center"
+  :class="darkMode ? 'text-gray-600' : 'text-gray-700'"
 >
-  <span x-text="`Waler Media LLC | © ${year} `"></span>
+  <span
+    x-data="{ year: new Date().getFullYear() }"
+    x-text="`Waler Media LLC | © ${year} `"
+  ></span>
   <div class="flex items-center justify-center mx-auto space-x-12 mt-24 768:mt-0 768:ml-32">
     {% for item in social  %}
       <a
-        target="_blank"
-        class="w-24 h-24 hover:text-gray-900 dark-hover:text-gray-300"
         href="{{ item.link }}"
+        target="_blank"
+        class="w-24 h-24"
+        :class="darkMode ? 'hover:text-gray-300' : 'hover:text-gray-900'"
       >
         {% include 'icons/' + item.icon + '.svg' %}
       </a>

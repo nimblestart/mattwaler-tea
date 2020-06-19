@@ -87,19 +87,11 @@ module.exports = {
     space: remObject,
     width: spacing,
   },
-  plugins: [
-    require('@tailwindcss/custom-forms'),
-    require('tailwindcss-dark-mode')(),
-  ],
+  plugins: [require('@tailwindcss/custom-forms')],
   purge: [
     './src/**/*.js',
     './src/**/*.njk',
     './src/**/*.svelte',
     './src/**/*.svg',
   ],
-  variants: {
-    backgroundColor: ['dark', 'hover'],
-    borderColor: ['dark', 'hover'],
-    textColor: ['dark', 'dark-hover', 'hover'],
-  },
 }
