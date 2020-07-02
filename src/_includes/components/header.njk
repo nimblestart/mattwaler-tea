@@ -1,43 +1,22 @@
-<template x-if="submittedForm">
-  <div class="p-24 bg-green-500 text-white font-700">
-    <div class="container flex justify-center items-center">
-      <p>
-        Thanks for reaching out! I will respond to your message as soon as possible.
-      </p>
-      <button @click="submittedForm = false" class="w-24 flex-shrink-0 ml-24">
-        {% include 'icons/close.svg' %}
-      </button>
-    </div>
-  </div>
-</template>
-
-<div class="h-12 bg-indigo-500"></div>
-
-<div class="text-center p-24 font-900 tracking-wide">
-  #blacklivesmatter
-</div>
-
 <header>
-  <div class="container px-24 pt-48 flex justify-between items-center">
-
-    {# Logo #}
-    <div class="flex items-center">
-      <span class="w-64">
+  <div aria-hidden class="h-4 bg-indigo-500"></div>
+  <div class="{{ css.container }} pt-16 flex justify-between items-center">
+    <a href="/" class="flex items-center">
+      <span class="w-12">
         {% include 'icons/whale-logo.svg' %}
       </span>
-      <div class="ml-12 leading-none">
-        <span class="block font-900 text-20">Matt Waler</span>
+      <div class="ml-4 leading-none">
+        <span class="block font-black text-lg">Matt Waler</span>
         <span
-          class="text-14 block"
+          class="text-sm block"
           :class="darkMode ? 'text-gray-400' : 'text-gray-600'"
         >
-          Web Developer
+          Fullstack Developer
         </span>
       </div>
-    </div>
-
+    </a>
     <button
-      class="w-48 h-48 p-4"
+      class="w-12 h-12 p-2"
       @click="
         darkMode
           ? localStorage.setItem(`colorScheme`, `light`)
@@ -51,5 +30,4 @@
         {% include 'icons/dark-mode.svg' %}
       </span>
     </button>
-
   </header>

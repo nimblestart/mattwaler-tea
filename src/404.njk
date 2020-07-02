@@ -7,7 +7,12 @@ permalink: /404.html
 {% extends 'components/page.njk' %}
 
 {% block body %}
-  <div class="container default-padding">
-    <h1 class="h1">{{ title }}</h1>
+  <div class="{{ css.container }} py-16 text-center">
+    <span class="block mx-auto max-w-lg">
+      {% include 'icons/404.svg' %}
+    </span>
+    <h1 class="{{ css.h1 }} mt-16">{{ title }}</h1>
+    <p class="text-lg mt-2">Let's get you back where you belong.</p>
+    <a class="{{ css.button }} inline-block mt-8" href="/">Go Home</a>
   </div>
 {% endblock %}

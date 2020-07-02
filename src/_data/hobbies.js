@@ -1,10 +1,5 @@
 module.exports = [
   {
-    title: 'Developing & Improving',
-    body:
-      'You will often catch me researching, practicing, and trying out the latest and greatest to stay at the top of my game.',
-  },
-  {
     title: 'Hitting the Gym',
     body:
       'I try to hit the gym a few times a week to build those vanity muscles. My goal is to look like Brad Pitt in Fight Club.',
@@ -20,13 +15,18 @@ module.exports = [
       'When doing mundane tasks, I usually toss in my headphones and try to learn from others. I love Syntax and Fullstack Radio.',
   },
   {
-    title: 'Playing Ping-Pong',
+    title: 'Playing Tennis',
     body:
-      'I played a lot of Tennis in High School, and since realized that I enjoy the version without running. I love a good game of baby tennis.',
+      'I played a lot of Tennis in High School, and have since rekindled the flame. Currently working on getting my topspin back to what it used to be.',
   },
   {
     title: 'Watching Movies',
     body:
-      'I absolutely love movies. My favorite film to date is Jojo Rabbit. Baby Driver is a close second place.',
+      'I absolutely love movies. I am a sucker for anything by Edgar Wright. My favorite film to date is Jojo Rabbit by Taika Waititi.',
+  },
+  {
+    title: 'Web Development',
+    body:
+      'You will often catch me researching, practicing, and trying out the latest and greatest to stay at the top of my game.',
   },
 ]

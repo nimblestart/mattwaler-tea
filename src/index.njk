@@ -6,142 +6,132 @@ description: I am Matt Waler, a freelance fullstack developer providing fullstac
 {% extends 'components/page.njk' %}
 
 {% block body %}
-  <article class="wrapper">
-    <div class="container items-center 768:flex">
-      <figure class="max-w-320 mx-auto">
-        <img
-          class="w-100% rounded-lg shadow-lg"
-          src="/images/me.jpg"
-          alt="Matt Waler's handsome face."
-        >
-      </figure>
-      <div class="flex-1 pt-32 768:pt-0 768:pl-64">
-        <h1 class="h1">The most easy-going web developer you'll ever meet.</h1>
-        <h2
-          class="mt-16 768:text-20"
-          :class="darkMode ? 'text-gray-400' : 'text-gray-700'"
-        >
-          I develop, deploy, and teach all things modern web development. I also love a good burrito.
-        </h2>
-        <nav class="mt-32 flex items-center">
-          <a class="cursor-pointer mr-8 button-primary" href="#contact">Contact</a>
-          <a class="cursor-pointer ml-8 button-secondary" href="#services">Services</a>
-        </nav>
-      </div>
+
+  {# Hero #}
+  <article class="{{ css.container }} py-16 grid gap-16 items-center grid-cols-1 md:grid-cols-8">
+    <figure class="md:col-span-3">
+      <img
+        class="w-1/2 object-cover mx-auto rounded-lg shadow-lg md:w-full"
+        src="/images/headshot.jpg"
+        alt="A selfie of yours truly.">
+    </figure>
+    <div class="md:col-span-5">
+      <h1 class="{{ css.h1 }}">The most easy-going web developer you'll ever meet.</h1>
+      <h2
+        class="mt-4 md:text-lg"
+        :class="darkMode ? 'text-gray-400' : 'text-gray-700'">
+        I design, develop, deploy, and teach all things modern web development. I also love playing Tennis and lifting weights.
+      </h2>
+      <nav class="mt-8 flex items-center">
+        <a href="#contact" class="{{ css.button }}">Contact</a>
+        <a href="#projects" class="{{ css.buttonAlt }} ml-4">Projects</a>
+      </nav>
     </div>
-    <div class="h-48 hidden 768:block"></div>
   </article>
 
+  {# Services #}
   <article
-    id="services"
-    class="wrapper border-b-2 border-t-2"
-    :class="darkMode ? 'bg-gray-900 border-gray-800' : 'bg-gray-100'"
-  >
-    <div class="container">
-      <h3 class="h2">What I do for a living.</h3>
-      <p class="mt-16 max-w-480">Listed below you will find a comprehensive list of the skills and services that I provide for my clients.</p>
-      <div class="mt-48 grid grid-cols-1 gap-32 640:gap-64 640:grid-cols-2 768:grid-cols-3">
+    class="py-16 border-b-2 border-t-2"
+    :class="darkMode ? 'bg-gray-900 border-gray-800' : 'bg-gray-100'">
+    <div class="{{ css.container }}">
+      <h3 class="{{ css.h2 }}">What I do for a living.</h3>
+      <p class="mt-2 max-w-lg">Listed below you will find a comprehensive list of the skills and services that I provide for my clients.</p>
+      <div class="mt-16 grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-3">
         {% for service in services %}
           <div>
-            <h4 class="font-900">{{ service.title }}</h4>
-            <p class="mt-8 text-14">{{ service.body }}</p>
+            <h4 class="font-black">{{ service.title }}</h4>
+            <p class="mt-2 text-sm">{{ service.body }}</p>
           </div>
         {% endfor %}
       </div>
     </div>
   </article>
 
-  <article id="projects" class="wrapper">
-    <div class="container">
-      <h3 class="h2">Stuff I'm working on.</h3>
-      <p class="mt-16 max-w-480">A few pet projects that I spend my spare development time on. Check them out or view the source code on GitHub.</p>
-      <div class="mt-64 grid gap-96 768:grid-cols-2">
-        {% for project in projects %}
-          <a target="_blank" href="{{ project.link }}">
-            <img class="shadow-lg rounded-lg" src="{{ project.image }}" alt="{{ project.title }} website screenshot.">
-            <h3 class="mt-32 h3">{{ project.title }}</h3>
-            <p class="mt-16">{{ project.description }}</p>
-            <p class="leading-none underline font-700 mt-16">View Project</p>
-          </a>
-        {% endfor %}
-      </div>
+  {# Projects #}
+  <article id="projects" class="{{ css.container }} py-16">
+    <h3 class="{{ css.h2 }}">Stuff I'm working on.</h3>
+    <p class="mt-2 max-w-lg">A few pet projects that I spend my spare development time on. Check them out or view the source code on GitHub.</p>
+    <div class="mt-16 grid gap-16 md:grid-cols-2">
+      {% for project in projects %}
+        <a target="_blank" href="{{ project.link }}">
+          <img
+            class="shadow-lg rounded-lg"
+            src="{{ project.image }}"
+            alt="{{ project.title }} website screenshot.">
+          <h3 class="{{ css.h3 }} mt-8">{{ project.title }}</h3>
+          <p class="mt-2">{{ project.description }}</p>
+        </a>
+      {% endfor %}
     </div>
   </article>
 
-  <div
-    id="about"
-    class="wrapper border-b-2 border-t-2"
-    :class="darkMode ? 'bg-gray-900 border-gray-800' : 'bg-gray-100'"
-  >
-    <article class="container">
-      <div class="max-w-640">
-        <h3 class="h2">A little bit about me.</h3>
-        <p class="mt-16">I'm an Ohio University graduate from Broadview Heights, Ohio. I love development, lifting, and the occasional blockbuster. I like to think I'm decently funny, but my friends can assure you that I am not.</p>
-        <p class="mt-16">Some of my favorite hobbies include:</p>
-      </div>
-      <div class="mt-48 grid grid-cols-1 gap-32 640:gap-64 640:grid-cols-2 768:grid-cols-3">
+  {# About Me #}
+  <article
+    class="border-b-2 border-t-2 py-16"
+    :class="darkMode ? 'bg-gray-900 border-gray-800' : 'bg-gray-100'">
+    <div class="{{ css.container }}">
+      <h3 class="{{ css.h2 }}">A little bit about me.</h3>
+      <p class="mt-2 max-w-lg">I'm an Ohio University graduate from Broadview Heights, Ohio. I love development, lifting, and the occasional blockbuster. I like to think I'm decently funny, but my friends can assure you that I am not.</p>
+      <div class="mt-16 grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-3">
         {% for hobby in hobbies %}
           <div>
-            <h4 class="mt-16 font-900">{{ hobby.title }}</h4>
-            <p class="mt-8 text-14">{{ hobby.body }}</p>
+            <h4 class="font-black">{{ hobby.title }}</h4>
+            <p class="mt-2 text-sm">{{ hobby.body }}</p>
           </div>
         {% endfor %}
       </div>
-    </article>
-  </div>
-
-  <article id="contact" class="wrapper">
-    <form
-      netlify
-      name="contact"
-      method="post"
-      aria-label="contact form"
-      action="/?contact"
-      class="container">
-      <div x-show="submittedForm" class="max-w-640">
-        <h3 class="h2">Thank you for reaching out!</h3>
-        <p class="mt-16">I will be in touch very shortly, my friend.</p>
-      </div>
-      <div x-show="!submittedForm" class="max-w-640">
-        <h3 class="h2">Get in touch with me.</h3>
-        <p class="mt-16">Fill out the form below, and I'll be in contact as soon as possible. Thank you so much for taking the time to check me out.</p>
-      </div>
-      <div x-show="!submittedForm" class="mt-48 grid grid-cols-2 gap-32">
-        <label class="col-span-2 640:col-span-1">
-          <span class="block">Name:</span>
-          <input
-            name="name"
-            type="text"
-            required
-            class="mt-8 form-input w-100%"
-            :class="darkMode ? 'text-gray-900' : ''"
-          >
-        </label>
-        <label class="col-span-2 640:col-span-1">
-          <span class="block">Email:</span>
-          <input
-            name="email"
-            type="email"
-            required
-            class="mt-8 form-input w-100%"
-            :class="darkMode ? 'text-gray-900' : ''"
-          >
-        </label>
-        <label class="col-span-2">
-          <span class="block">Message:</span>
-          <textarea
-            name="message"
-            rows="7"
-            required
-            class="mt-8 form-textarea w-100%"
-            :class="darkMode ? 'text-gray-900' : ''"
-          ></textarea>
-        </label>
-        <div class="col-span-2">
-          <button type="submit" class="button-primary">Submit</button>
-        </div>
-      </div>
-    </form>
+    </div>
   </article>
+
+  {# Contact Form #}
+  <form
+    netlify
+    name="contact"
+    method="post"
+    aria-label="contact form"
+    action="/?contact"
+    id="contact"
+    class="{{ css.container }} py-16">
+    <div x-show="!submittedForm" class="max-w-lg">
+      <h3 class="{{ css.h2 }}">Get in touch with me.</h3>
+      <p class="mt-2">Fill out the form below, and I'll be in contact as soon as possible. Thank you so much for taking the time to check me out.</p>
+    </div>
+    <div x-show="submittedForm" class="max-w-lg">
+      <h3 class="{{ css.h2 }}">Thank you for reaching out!</h3>
+      <p class="mt-2">I will be in touch very shortly, my friend.</p>
+    </div>
+    <div x-show="!submittedForm" class="mt-16 grid grid-cols-2 gap-8">
+      <label class="col-span-2 md:col-span-1">
+        <span class="block">Name:</span>
+        <input
+          name="name"
+          type="text"
+          required
+          class="mt-2 form-input w-full"
+          :class="darkMode ? 'text-gray-900' : ''">
+      </label>
+      <label class="col-span-2 md:col-span-1">
+        <span class="block">Email:</span>
+        <input
+          name="email"
+          type="email"
+          required
+          class="mt-2 form-input w-full"
+          :class="darkMode ? 'text-gray-900' : ''">
+      </label>
+      <label class="col-span-2">
+        <span class="block">Message:</span>
+        <textarea
+          name="message"
+          rows="7"
+          required
+          class="mt-2 form-textarea w-full"
+          :class="darkMode ? 'text-gray-900' : ''"></textarea>
+      </label>
+      <div class="col-span-2">
+        <button type="submit" class="{{ css.button }}">Submit</button>
+      </div>
+    </div>
+  </form>
 
 {% endblock %}
