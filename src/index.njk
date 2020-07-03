@@ -1,6 +1,8 @@
 ---
-title: Web Developer
-description: I am Matt Waler, a freelance fullstack developer providing fullstack consulting and development.
+title:
+  Web Developer
+description:
+  I am Matt Waler, a freelance fullstack developer providing fullstack consulting and development.
 ---
 
 {% extends 'components/page.njk' %}
@@ -8,14 +10,8 @@ description: I am Matt Waler, a freelance fullstack developer providing fullstac
 {% block body %}
 
   {# Hero #}
-  <article class="{{ css.container }} py-16 grid gap-16 items-center grid-cols-1 md:grid-cols-8">
-    <figure class="md:col-span-3">
-      <img
-        class="w-1/2 object-cover mx-auto rounded-lg shadow-lg md:w-full"
-        src="/images/headshot.jpg"
-        alt="A selfie of yours truly.">
-    </figure>
-    <div class="md:col-span-5">
+  <article class="{{ css.container }} py-16 flex flex-wrap-reverse items-center">
+    <div class="w-full mt-16 md:mt-0 md:w-7/12">
       <h1 class="{{ css.h1 }}">The most easy-going web developer you'll ever meet.</h1>
       <h2
         class="mt-4 md:text-lg"
@@ -27,6 +23,12 @@ description: I am Matt Waler, a freelance fullstack developer providing fullstac
         <a href="#projects" class="{{ css.buttonAlt }} ml-4">Projects</a>
       </nav>
     </div>
+    <figure class="w-full md:w-5/12 md:pl-16">
+      <img
+        class="w-1/2 object-cover mx-auto rounded-lg shadow-lg md:w-full"
+        src="/images/headshot.jpg"
+        alt="A selfie of yours truly.">
+    </figure>
   </article>
 
   {# Services #}
