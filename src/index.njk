@@ -3,6 +3,10 @@ title:
   Web Developer
 description:
   I am Matt Waler, a freelance fullstack developer providing fullstack consulting and development.
+h1:
+  The most easy-going web developer you'll ever meet.
+h2:
+  I design, develop, deploy, and teach all things modern web development. I also love playing Tennis and lifting weights.
 ---
 
 {% extends 'components/page.njk' %}
@@ -12,11 +16,11 @@ description:
   {# Hero #}
   <article class="{{ css.container }} py-16 flex flex-wrap-reverse items-center">
     <div class="w-full mt-16 md:mt-0 md:w-7/12">
-      <h1 class="{{ css.h1 }}">The most easy-going web developer you'll ever meet.</h1>
+      <h1 class="{{ css.h1 }}">{{ h1 }}</h1>
       <h2
         class="mt-4 md:text-lg"
         :class="darkMode ? 'text-gray-400' : 'text-gray-700'">
-        I design, develop, deploy, and teach all things modern web development. I also love playing Tennis and lifting weights.
+        {{ h2 }}
       </h2>
       <nav class="mt-8 flex items-center">
         <a href="#contact" class="{{ css.button }}">Contact</a>
@@ -36,10 +40,10 @@ description:
     class="py-16 border-b-2 border-t-2"
     :class="darkMode ? 'bg-gray-900 border-gray-800' : 'bg-gray-100'">
     <div class="{{ css.container }}">
-      <h3 class="{{ css.h2 }}">What I do for a living.</h3>
-      <p class="mt-2 max-w-lg">Listed below you will find a comprehensive list of the skills and services that I provide for my clients.</p>
+      <h3 class="{{ css.h2 }}">{{ services.heading }}</h3>
+      <p class="mt-2 max-w-lg">{{ services.subheading }}</p>
       <div class="mt-16 grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-3">
-        {% for service in services %}
+        {% for service in services.list %}
           <div>
             <h4 class="font-black">{{ service.title }}</h4>
             <p class="mt-2 text-sm">{{ service.body }}</p>
@@ -51,10 +55,10 @@ description:
 
   {# Projects #}
   <article id="projects" class="{{ css.container }} py-16">
-    <h3 class="{{ css.h2 }}">Stuff I'm working on.</h3>
-    <p class="mt-2 max-w-lg">A few pet projects that I spend my spare development time on. Check them out or view the source code on GitHub.</p>
+    <h3 class="{{ css.h2 }}">{{ projects.heading }}</h3>
+    <p class="mt-2 max-w-lg">{{ projects.subheading }}</p>
     <div class="mt-16 grid gap-16 md:grid-cols-2">
-      {% for project in projects %}
+      {% for project in projects.list %}
         <a target="_blank" href="{{ project.link }}">
           <img
             class="shadow-lg rounded-lg"
@@ -67,15 +71,15 @@ description:
     </div>
   </article>
 
-  {# About Me #}
+  {# Hobbies #}
   <article
     class="border-b-2 border-t-2 py-16"
     :class="darkMode ? 'bg-gray-900 border-gray-800' : 'bg-gray-100'">
     <div class="{{ css.container }}">
-      <h3 class="{{ css.h2 }}">A little bit about me.</h3>
-      <p class="mt-2 max-w-lg">I'm an Ohio University graduate from Broadview Heights, Ohio. I love development, lifting, and the occasional blockbuster. I like to think I'm decently funny, but my friends can assure you that I am not.</p>
+      <h3 class="{{ css.h2 }}">{{ hobbies.heading }}</h3>
+      <p class="mt-2 max-w-lg">{{ hobbies.subheading }}</p>
       <div class="mt-16 grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-3">
-        {% for hobby in hobbies %}
+        {% for hobby in hobbies.list %}
           <div>
             <h4 class="font-black">{{ hobby.title }}</h4>
             <p class="mt-2 text-sm">{{ hobby.body }}</p>
