@@ -1,5 +1,5 @@
 const buttonClasses =
-  'text-sm px-4 py-2 rounded font-black uppercase tracking-wide'
+  'text-sm px-4 py-3 rounded font-black uppercase tracking-wide'
 const heading = 'font-black leading-tight'
 
 module.exports = {
