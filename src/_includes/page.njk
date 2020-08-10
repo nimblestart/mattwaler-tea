@@ -1,0 +1,31 @@
+{% from 'macros.njk' import hero with context %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Matt Waler | {{ title }}</title>
+    <meta name="description" content="{{ description }}">
+    <link rel="stylesheet" href="/assets/main.bundle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;800&display=swap" rel="stylesheet">
+    <script defer src="/assets/main.bundle.js"></script>
+    {% include 'favicons.njk' %}
+  </head>
+  <body class="flex flex-col min-h-screen {{ 'debug-screens' if env.dev }}">
+    {% include 'header.njk' %}
+    <main class="flex-grow {{ mainClasses }}">
+      {% block body %}
+        {{ hero(
+          heading = title,
+          paragraph = excerpt
+        )}}
+        <article class="mt-8 container prose prose-xl">
+          {{ content | safe }}
+        </article>
+      {% endblock %}
+    </main>
+    {% include 'footer.njk' %}
+  </body>
+</html>

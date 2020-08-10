@@ -1,2 +1,6 @@
-import './main.css'
+// CSS
+import './main.pcss'
+
+// JS
 import 'alpinejs'
+import 'turbolinks'

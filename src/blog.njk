@@ -1,0 +1,23 @@
+---
+title: Blog
+description:
+
+---
+
+{% extends 'page.njk' %}
+{% from 'macros.njk' import hero with context %}
+
+{% block body %}
+  {{ hero(
+    heading = 'My two cents on web development.',
+    paragraph = 'Here you will find my thoughts, opinions, findings, and neat tricks I have discovered over my years in web development. I reserve the right to change my mind about anything I say at any time.'
+  )}}
+  <section class="container {{ css.topMargin }} grid gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    {% for post in collections.blog %}
+      <a class="bg-white rounded-lg shadow-lg p-8" href="{{ post.url }}">
+        <h2 class="{{ css.h4 }}">{{ post.data.title }}</h2>
+        <p class="text-sm mt-2">{{ post.data.excerpt }}</p>
+      </a>
+    {% endfor %}
+  </section>
+{% endblock %}

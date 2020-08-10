@@ -1,0 +1,15 @@
+{% macro hero(
+  top = null,
+  heading = 'Default Heading',
+  paragraph = 'Default subheading'
+)%}
+  <section class="container mt-8 md:mt-12 text-white text-center ">
+    <div class="bg-indigo-500 p-8 md:p-16 rounded-lg shadow-lg">
+      {{ top | safe }}
+      <h1 class="{{ css.h1 }}">{{ heading | safe }}</h1>
+      <p class="mt-4 md:text-lg max-w-screen-md mx-auto">
+        {{ paragraph }}
+      </p>
+    </div>
+  </section>
+{% endmacro %}

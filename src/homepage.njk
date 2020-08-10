@@ -1,0 +1,86 @@
+---
+permalink: 'index.html'
+title: Homepage
+description:
+  I am Matt Waler, a freelance fullstack developer providing fullstack consulting and development.
+---
+
+{% extends 'page.njk' %}
+{% from 'macros.njk' import hero with context %}
+
+{% block body %}
+  {% set heroImage %}
+    <img
+      alt="A picture of Matt Waler"
+      class="bw w-48 lg:w-64 mb-8 border-4 border-white rounded-full mx-auto"
+      src="/assets/headshot.jpg"
+    >
+  {% endset %}
+  {{ hero(
+    top = heroImage,
+    heading = 'I make websites with the latest<br class="hidden xl:block"> and greatest tools.',
+    paragraph = 'My name is Matt Waler and I am a fullstack developer from Ohio. I specialize in the latest and greatest frontend frameworks like React, Vue, and Svelte. I am a firm believer that simple, pragmatic, and readable code is far superior to complex abstractions and over-engineering.'
+  )}}
+
+  <section class="container {{ css.topMargin }} grid gap-12 lg:gap-24 grid-cols-1 lg:grid-cols-3">
+    {% macro latest(
+      heading = 'Default Heading',
+      description = 'Default Description',
+      list = collections.blog,
+      newTab = false,
+      link = '/'
+    )%}
+      <article class="flex flex-col">
+        <h2 class="{{ css.h2 }}">{{ heading }}</h2>
+        <p class="mt-2">{{ description }}</p>
+        <ul class="mt-4 space-y-3 mb-8">
+        {% for i in range(3)  %}
+          {% set item = list[i] %}
+          <a target="{{ '_blank' if newTab }}" href="{{ item.url or item.data.link }}" class="flex items-start">
+            <span style="margin-top: 7px" class="flex-none w-2 h-2 bg-indigo-500 rounded-full"></span>
+            <span class="ml-2 text-base underline leading-tight">
+              {{ item.data.title }}
+            </span>
+          </li>
+        {% endfor %}
+        </ul>
+        <a class="{{ css.buttonAlt }} self-start lg:self-stretch inline-block text-center mt-auto" href="{{ link }}">View All {{ heading }}</a>
+      </article>
+    {% endmacro %}
+    {{ latest(
+      heading = 'Blog Posts',
+      description = 'The latest and greatest posts written by yours truly.',
+      link = '/blog/',
+      list = collections.blog
+    )}}
+    {{ latest(
+      heading = 'Projects',
+      description = 'My most recent side projects that I work on in my spare time.',
+      newTab = true,
+      link = '/projects/',
+      list = collections.projects
+    )}}
+    {{ latest(
+      heading = 'Websites',
+      description = 'The sites I have personally worked on most recently.',
+      newTab = true,
+      link = '/sites/',
+      list = collections.sites
+    )}}
+  </section>
+
+  <section class="container {{ css.topMargin }} mb-12">
+    <div class="bg-white px-4 rounded-lg shadow-lg py-12 lg:flex items-center justify-center">
+      <div class="max-w-screen-md text-center lg:text-left">
+        <h3 class="{{ css.h2 }}">Looking for a web developer?</h3>
+        <p class="mt-2">Let's get in touch and bring your dream website to life.</p>
+      </div>
+      <div class="flex-none mt-6 text-center lg:mt-0 lg:ml-24">
+        <a class="{{ css.button }}" href="/contact/">
+          Contact Me
+        </a>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

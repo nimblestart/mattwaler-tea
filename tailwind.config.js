@@ -1,6 +1,9 @@
 module.exports = {
   theme: {
-    container: false,
+    container: {
+      center: true,
+      padding: '1.5rem',
+    },
     customForms: (theme) => ({
       default: {
         'input, textarea': {
@@ -11,13 +14,20 @@ module.exports = {
         },
       },
     }),
+    debugScreens: {
+      position: ['bottom', 'right'],
+    },
     extend: {
       fontFamily: {
-        inter: '"Inter", sans-serif',
-      },
+        assistant: `'Assistant', sans-serif`,
+      }
     },
   },
-  plugins: [require('@tailwindcss/custom-forms')],
+  plugins: [
+    require('@tailwindcss/custom-forms'),
+    require('@tailwindcss/typography'),
+    require('tailwindcss-debug-screens'),
+  ],
   purge: [
     './src/**/*.js',
     './src/**/*.njk',
