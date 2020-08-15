@@ -19,9 +19,9 @@
       {% block body %}
         {{ hero(
           heading = title,
-          paragraph = excerpt
+          paragraph = excerpt or description
         )}}
-        <article class="mt-8 container prose prose-xl">
+        <article class="my-16 container prose md:prose-xl">
           {{ content | safe }}
         </article>
       {% endblock %}

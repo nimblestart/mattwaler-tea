@@ -1,0 +1,27 @@
+---
+layout: page.njk
+title: Get in touch with me.
+description:
+  Fill out the contact form below and I promise I will reach out as fast as I can. Thank you in advance for contacting me!
+---
+
+<form name="contact" method="post" aria-label="contact form" action="/?contact" class="">
+  <input type="hidden" name="form-name" value="contact">
+  <div class="mt-16 grid grid-cols-2 gap-8">
+    <label class="col-span-2 md:col-span-1">
+      <span class="block">Name:</span>
+      <input name="name" type="text" required="" class="mt-2 form-input w-full text-gray-900" :class="darkMode ? 'text-gray-900' : ''">
+    </label>
+    <label class="col-span-2 md:col-span-1">
+      <span class="block">Email:</span>
+      <input name="email" type="email" required="" class="mt-2 form-input w-full text-gray-900" :class="darkMode ? 'text-gray-900' : ''">
+    </label>
+    <label class="col-span-2">
+      <span class="block">Message:</span>
+      <textarea name="message" rows="7" required="" class="mt-2 form-textarea w-full text-gray-900" :class="darkMode ? 'text-gray-900' : ''"></textarea>
+    </label>
+    <div class="col-span-2">
+      <button type="submit" class="text-sm px-4 py-3 rounded font-black uppercase tracking-wide bg-indigo-500 text-white">Submit</button>
+    </div>
+  </div>
+</form>

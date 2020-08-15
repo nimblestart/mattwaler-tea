@@ -12,11 +12,15 @@ description:
     heading = 'My two cents on web development.',
     paragraph = 'Here you will find my thoughts, opinions, findings, and neat tricks I have discovered over my years in web development. I reserve the right to change my mind about anything I say at any time.'
   )}}
-  <section class="container {{ css.topMargin }} grid gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+  <section class="container max-w-screen-md mt-16 space-y-12">
     {% for post in collections.blog %}
-      <a class="bg-white rounded-lg shadow-lg p-8" href="{{ post.url }}">
-        <h2 class="{{ css.h4 }}">{{ post.data.title }}</h2>
-        <p class="text-sm mt-2">{{ post.data.excerpt }}</p>
+      <a href="{{ post.url }}" class="flex">
+        <div class="flex-none border-l-4"></div>
+        <div class="ml-8">
+          <h2 class="{{ css.h4 }}">{{ post.data.title }}</h2>
+          <p class="text-base mt-2">{{ post.data.excerpt }}</p>
+          <span class="inline-block text-indigo-500 font-bold mt-2">Read More</span>
+        </div>
       </a>
     {% endfor %}
   </section>
