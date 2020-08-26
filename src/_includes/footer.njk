@@ -4,7 +4,7 @@
     x-text="`Waler Media LLC | © ${new Date().getFullYear()}`"
   ></span>
   <div class="w-full flex items-center justify-center space-x-3 mt-4 md:w-auto md:mt-0 md:ml-6">
-    {% for item in navigation.footer  %}
+    {% for item in navigation.external  %}
       <a href="{{ item.link }}" target="_blank" class="w-5 h-5">
         {% include 'icons/' + item.icon + '.svg' %}
       </a>

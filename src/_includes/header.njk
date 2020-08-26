@@ -1,7 +1,7 @@
 {% set currentPage = page.url %}
 
 <header class="bg-gradient-to-r from-indigo-500 via-indigo-700 to-indigo-900 text-white">
-  <div class="container py-6 flex items-center justify-between">
+  <div class="container py-5 flex items-center">
     <a href="/" class="flex items-center">
       <span class="w-6 h-6 text-indigo-300">
         {% include 'icons/kebab.svg' %}
@@ -11,17 +11,26 @@
       </span>
     </a>
 
-    <nav class="space-x-4 hidden md:block">
-      {% for item in navigation.header %}
+    <nav class="ml-24 space-x-4 hidden md:block">
+      {% for item in navigation.internal %}
         {% set isCurrentPage = item.link === currentPage %}
         <a
-          class="text-base tracking-tight {{ 'text-white' if isCurrentPage else 'text-indigo-200' }}"
+          class="font-semibold text-sm tracking-tight {{ 'text-white' if isCurrentPage else 'text-indigo-200' }}"
           href="{{ item.link }}"
         >
           {{ item.name }}
         </a>
       {% endfor %}
     </nav>
+
+    <nav class="ml-auto flex space-x-4 text-indigo-300">
+      {% for item in navigation.external  %}
+        <a href="{{ item.link }}" target="_blank" class="w-5 h-5">
+          {% include 'icons/' + item.icon + '.svg' %}
+        </a>
+      {% endfor  %}
+    </nav>
+
     <button class="w-5 h-5 md:hidden text-indigo-200">
       {% include 'icons/menu.svg' %}
     </button>
