@@ -1,0 +1,35 @@
+---
+permalink: 'index.html'
+title: Homepage
+description:
+  I am Matt Waler, a freelance fullstack developer providing fullstack consulting and development.
+---
+
+{% extends 'page.njk' %}
+
+{% block body %}
+
+  <section class="bg-gradient-to-r from-indigo-500 via-indigo-700 to-indigo-900 text-white">
+    <div class="container relative py-16">
+      {# Heading #}
+      <div class="max-w-lg">
+        <h1 class="text-4xl font-bold leading-none">
+          <span class="">
+            I make websites and apps,
+          </span>
+          <span class="pt-1 block text-indigo-200">
+            in exchange for money.
+          </span>
+        </h1>
+        <p class="mt-4 text-indigo-100 ">I also love playing Tennis and inhaling burritos.</p>
+      </div>
+      <img
+        alt="tennis gif"
+        style="width: 600px; top: 48px; right: 0;"
+        class="absolute shadow-lg rounded-lg mr-6"
+        src="/assets/forehand.gif"
+      >
+    </div>
+  </section>
+
+{% endblock %}

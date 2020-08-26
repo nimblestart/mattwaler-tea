@@ -17,11 +17,6 @@ module.exports = {
     debugScreens: {
       position: ['bottom', 'right'],
     },
-    extend: {
-      fontFamily: {
-        assistant: `'Assistant', sans-serif`,
-      }
-    },
   },
   plugins: [
     require('@tailwindcss/custom-forms'),

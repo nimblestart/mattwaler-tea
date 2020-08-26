@@ -1,29 +1,32 @@
 {% set currentPage = page.url %}
 
-<header class="container h-24 flex justify-between items-center">
-  <a href="/" class="flex items-center">
-    <span class="w-8 h-8 shadow rounded-full bg-indigo-500 flex justify-center items-center text-sm font-bold text-white">
-      MW
-    </span>
-    <span class="ml-2 pb-1 leading-none tracking-tight font-black text-xl">
-      mattwaler
-    </span>
-  </a>
-  <nav class="space-x-4 hidden md:block">
-    {% for item in header %}
-      {% set isCurrentPage = item.link === currentPage %}
-      <a
-        class="{{ 'font-bold' if isCurrentPage }}"
-        href="{{ item.link }}"
-      >
-        {{ item.name }}
-      </a>
-    {% endfor %}
-  </nav>
-  <button class="w-5 h-5 md:hidden text-gray-700">
-    {% include 'icons/menu.svg' %}
-  </button>
-  <button class="fixed bottom-0 bg-white m-6 right-0 w-12 h-12 p-3 rounded-full shadow-lg md:hidden text-gray-700">
-    {% include 'icons/menu.svg' %}
-  </button>
+<header class="bg-gradient-to-r from-indigo-500 via-indigo-700 to-indigo-900 text-white">
+  <div class="container py-6 flex items-center justify-between">
+    <a href="/" class="flex items-center">
+      <span class="w-6 h-6 text-indigo-300">
+        {% include 'icons/kebab.svg' %}
+      </span>
+      <span class="ml-2 pb-1 leading-none tracking-tight font-bold text-2xl">
+        mattwaler
+      </span>
+    </a>
+
+    <nav class="space-x-4 hidden md:block">
+      {% for item in navigation.header %}
+        {% set isCurrentPage = item.link === currentPage %}
+        <a
+          class="text-base tracking-tight {{ 'text-white' if isCurrentPage else 'text-indigo-200' }}"
+          href="{{ item.link }}"
+        >
+          {{ item.name }}
+        </a>
+      {% endfor %}
+    </nav>
+    <button class="w-5 h-5 md:hidden text-indigo-200">
+      {% include 'icons/menu.svg' %}
+    </button>
+  </div>
+  <div class="container">
+    <div class="h-px bg-indigo-200" style="opacity: 0.2;"></div>
+  </div>
 </header>
