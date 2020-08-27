@@ -8,7 +8,6 @@ tldr:
 
 ## The Origin Story
 
-
 I realized recently that while there are a gagillion tutorials on YouTube, I was never able to find any services that offered such a vital skill in being a developer on a team, pair-programming.
 
 It was at that point I decided it was time to do something about that.
