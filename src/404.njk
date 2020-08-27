@@ -1,18 +1,31 @@
 ---
-title: 'Whoops! You took a wrong turn.'
+title: Page Not Found
 description: This is where you go when a page doesn't exist.
 permalink: /404.html
+heading: Something's not right here.
+paragraph:
+  There hasn't been a page at this URL in over 40 years! Let's get you home.
 ---
 
-{% extends 'components/page.njk' %}
+{% extends 'page.njk' %}
 
 {% block body %}
-  <div class="{{ css.container }} py-16 text-center">
-    <span class="block mx-auto max-w-lg">
-      {% include 'icons/404.svg' %}
-    </span>
-    <h1 class="{{ css.h1 }} mt-16">{{ title }}</h1>
-    <p class="text-lg mt-2">Let's get you back where you belong.</p>
-    <a class="{{ css.button }} inline-block mt-8" href="/">Go Home</a>
-  </div>
+
+  <section class="gradient-purple text-white py-8 lg:py-16">
+    <div class="container max-w-screen-md mx-auto text-center">
+      <h1 class="text-2xl sm:text-3xl xl:text-4xl font-bold leading-none">
+        {{ heading }}
+      </h1>
+      <p class="mt-4 text-sm sm:text-base text-indigo-100">{{ paragraph }}</p>
+      <a class="mt-8 inline-flex items-center border px-4 py-2 rounded" href="/feed.xml">
+        <span class="font-medium tracking-tight leading-none">
+          Home
+        </span>
+      </a>
+    </div>
+  </section>
+  <span class="w-full h-12 block gradient-purple text-gray-100">
+    {% include 'icons/waves.svg' %}
+  </span>
+
 {% endblock %}
