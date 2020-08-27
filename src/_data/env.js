@@ -1,3 +1,3 @@
 module.exports = {
-  dev: process.NODE_ENV !== 'production',
+  dev: process.env.NODE_ENV !== 'production',
 }
