@@ -1,34 +1,182 @@
 ---
 permalink: 'index.html'
-title: Homepage
+title: Home
 description:
   I am Matt Waler, a freelance fullstack developer providing fullstack consulting and development.
 ---
+
+{% set codeBlock %}
+let isSiteAwesome = false
+let didMattBuildIt = false
+
+function contactMatt(message) {
+  return alert(message)
+}
+
+if (!isSiteAwesome || didMattBuildIt) {
+  return contactMatt('Contact Matt!')
+}
+{% endset %}
 
 {% extends 'page.njk' %}
 
 {% block body %}
 
-  <section class="bg-gradient-to-r from-indigo-500 via-indigo-700 to-indigo-900 text-white">
-    <div class="container relative py-16">
-      {# Heading #}
-      <div class="max-w-lg">
-        <h1 class="text-4xl font-bold leading-none">
-          <span class="">
+  {# Success Contact Submit #}
+  <section
+    x-data="{ didSubmit: false }"
+    x-init="window.location.hash === '#contact'
+      ? function() {
+        setTimeout(() => { didSubmit = true }, 500)
+        setTimeout(() => { didSubmit = false }, 3000)
+      }
+      : null
+    "
+    x-cloak
+    x-show.transition="didSubmit"
+    class="fixed bottom-0 right-0 m-8 bg-white p-6 shadow-lg rounded-lg z-50 max-w-md"
+  >
+    <div class="flex items-center">
+      <span class="flex-none w-16 text-teal-500 rounded-full">
+        {% include 'icons/check.svg' %}
+      </span>
+      <div class="ml-4">
+        <p class="font-extrabold leading-none text-xl">Success!</p>
+        <p class="mt-2 text-sm">Thanks for filling out the contact form. I will be in touch very shortly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="gradient-purple text-white">
+    <div class="container py-8 text-center relative lg:py-16 lg:text-left">
+      <video
+        playsinline
+        poster="/assets/forehands.jpg"
+        controls
+        loop
+        class="object-cover shadow-lg rounded-lg w-full sm:w-2/3 md:w-1/2 mx-auto lg:hidden"
+        src="/assets/forehands.mp4"
+      ></video>
+      <div class="mt-10 lg:mt-0 lg:w-1/2">
+        <h1 class="text-2xl sm:text-3xl xl:text-4xl font-bold leading-none">
+          <span>
             I make websites and apps,
           </span>
           <span class="pt-1 block text-indigo-200">
             in exchange for money.
           </span>
         </h1>
-        <p class="mt-4 text-indigo-100 ">I also love playing Tennis and inhaling burritos.</p>
+        <p class="mt-4 text-sm sm:text-base text-indigo-100 ">I also love Tennis, Chipotle, and the occasional White Claw.</p>
       </div>
-      <img
-        alt="tennis gif"
-        style="width: 600px; top: 48px; right: 0;"
-        class="absolute shadow-lg rounded-lg mr-6"
-        src="/assets/forehand.gif"
-      >
+
+      {# Big Viewport Offset Imagess #}
+      <video
+        playsinline
+        poster="/assets/forehands.jpg"
+        controls
+        loop
+        class="object-cover absolute shadow-lg rounded-lg hidden xl:block mr-6"
+        src="/assets/forehands.mp4"
+        style="width: 640px; height: 320px; top: 48px; right: 0;"
+      ></video>
+
+      <video
+        playsinline
+        poster="/assets/forehands.jpg"
+        controls
+        loop
+        class="object-cover absolute shadow-lg rounded-lg hidden lg:block xl:hidden mr-6"
+        src="/assets/forehands.mp4"
+        style="width: 480px; height: 280px; top: 48px; right: 0;"
+      ></video>
+
+    </div>
+  </section>
+
+  {# Waves & Offset Correction  #}
+  <span class="z-0 w-full h-16 block gradient-purple text-gray-100">
+    {% include 'icons/waves.svg' %}
+  </span>
+  <div role="presentation" class="hidden lg:block" style="height: 22px;"></div>
+  <div role="presentation" class="hidden xl:block" style="height: 56px;"></div>
+
+
+  {# What I Do #}
+  <section class="relative">
+
+    {# Blobs #}
+    <div class="z-0 opacity-25 text-gray-300">
+      <span class="absolute" style="width: 640px; top: -128px; left: -360px;">
+        {% include 'icons/blob-1.svg' %}
+      </span>
+      <span class="absolute" style="width: 640px; top: 320px; right: -360px;">
+        {% include 'icons/blob-1.svg' %}
+      </span>
+    </div>
+
+    {# Content #}
+    <div class="container text-center pt-12 sm:pt-24 lg:pt-32">
+      <h2 class="text-3xl leading-tight font-extrabold sm:text-4xl">
+        Jack of all trades.
+        <br class="sm:hidden">
+        Master of some.
+      </h2>
+      <p class="text-gray-700 mt-1 italic text-sm sm:text-lg">I can make myself useful in a whole number of ways.</p>
+      <div class="mt-12 grid gap-12 sm:gap-16 sm:mt-24 sm:grid-cols-3 lg:gap-24">
+        {% for skill in skills %}
+          <div class="flex flex-col">
+            <span class="w-8 h-8 md:w-16 md:h-16 mx-auto animate-grow {{ skill.color }}">
+              {% include 'icons/' + skill.icon + '.svg' %}
+            </span>
+            <h2 class="mt-4 font-extrabold leading-none text-xl md:mt-6 md:text-2xl">{{ skill.name }}</h2>
+            <p class="mt-2 md:mt-3 text-sm md:text-base text-gray-600">
+              {{ skill.description }}
+            </p>
+            <span class="h-4"></span>
+            <a class="mt-auto flex justify-center items-center font-extrabold {{ skill.color }}" href="{{ skill.link }}">
+              {{ skill.linkText }}
+              <span class="ml-1 w-4 h-4">
+                {% include 'icons/arrow.svg' %}
+              </span>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </section>
+
+  <section class="container grid-cols-1 grid gap-8 pt-12 sm:pt-24 items-center md:gap-16 lg:grid-cols-2 lg:pt-32 xl:gap-24">
+
+    {# Code Snippet #}
+    <div class="bg-gray-900 p-2 text-white rounded-lg shadow-lg text-sm sm:text-base">
+      <div class="px-4 pt-2 space-x-2 flex items-center">
+        <div class="rounded-full w-3 h-3 bg-red-500"></div>
+        <div class="rounded-full w-3 h-3 bg-yellow-500"></div>
+        <div class="rounded-full w-3 h-3 bg-green-500"></div>
+      </div>
+      <div class="mt-2">
+        {%- highlight "js" -%}
+          {{ codeBlock | safe }}
+        {%- endhighlight -%}
+      </div>
+    </div>
+
+    {# Contact Content #}
+    <div class="text-center lg:text-left">
+      <h3 class="relative inline text-2xl font-extrabold leading-tight lg:text-3xl">
+        Do you want to build a website?
+        <span class="w-6 h-6 absolute lg:hidden animate-bounce" style="top: -16px; left: -32px;">
+          {% include 'icons/music.svg' %}
+        </span>
+        <span class="w-8 h-8 absolute hidden lg:block animate-bounce" style="top: -32px; left: -32px;">
+          {% include 'icons/music.svg' %}
+        </span>
+      </h3>
+      <p class="mt-2 sm:mt-4 text-sm sm:text-base lg:text-lg">
+        Don't get <strong class="font-bold italic">Frozen</strong> with a site you don't love. I can refactor, refresh, or even straight-up build you a new website or web application that will knock your socks off.
+      </p>
+      <a class="inline-block mt-6 bg-indigo-500 rounded font-semibold text-white px-4 py-2" href="/contact/">Contact</a>
     </div>
   </section>
 

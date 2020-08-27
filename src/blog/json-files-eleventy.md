@@ -1,11 +1,12 @@
 ---
 title: Exporting JSON with Eleventy
-excerpt: In this post I dive into 11ty once again and uncover how you can export templates files containing any 11ty data to any filetype. In this post I export to JSON so it can be consumed on the frontend dynamically!
+excerpt: Eleventy doesn't only just export HTML. You can leverage it's power to output any file type you want. In this post, I show you how to export JSON so it can be consumed dynamically in the client!
 date: 2020-03-26
+tldr:
+  "You can export a template to any file type you want by setting a template's `permalink` value to the desired extension. For example, you can export JSON by setting `permalink: '/data/posts.json'` in a template's front matter."
 ---
 
-TLDR: Here is a nifty way to export 11ty data to JSON so it can be consumed on the client side!
-
+## The sky's the limit
 In 11ty, you are able to customize the filetype of the exported template just by appending any filetype to the **permalink** field.
 
 In the following example, I am looping over a pretend posts collection inside 11ty to build a JSON file of data.

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Matt Waler | {{ title }}</title>
-    <meta name="description" content="{{ description }}">
+    <title>{{ title or 'Title' }} | Matt Waler</title>
+    <meta name="description" content="{{ description or 'Description' }}">
     <link rel="stylesheet" href="/assets/main.bundle.css">
     <script defer src="/assets/main.bundle.js"></script>
     {% include 'favicons.njk' %}
@@ -14,7 +14,6 @@
     {% include 'header.njk' %}
     <main>
       {% block body %}
-        {{ content | safe }}
       {% endblock %}
     </main>
     {% include 'footer.njk' %}

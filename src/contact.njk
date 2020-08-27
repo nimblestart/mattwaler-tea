@@ -1,27 +1,47 @@
 ---
-layout: page.njk
-title: Get in touch with me.
+title: Contact
+heading: Let's get in touch.
 description:
   Fill out the contact form below and I promise I will reach out as fast as I can. Thank you in advance for contacting me!
 ---
 
-<form name="contact" method="post" aria-label="contact form" action="/?contact" class="container">
-  <input type="hidden" name="form-name" value="contact">
-  <div class="mt-16 grid grid-cols-2 gap-8">
-    <label class="col-span-2 md:col-span-1">
-      <span class="block">Name:</span>
-      <input name="name" type="text" required="" class="mt-2 form-input w-full text-gray-900" :class="darkMode ? 'text-gray-900' : ''">
-    </label>
-    <label class="col-span-2 md:col-span-1">
-      <span class="block">Email:</span>
-      <input name="email" type="email" required="" class="mt-2 form-input w-full text-gray-900" :class="darkMode ? 'text-gray-900' : ''">
-    </label>
-    <label class="col-span-2">
-      <span class="block">Message:</span>
-      <textarea name="message" rows="7" required="" class="mt-2 form-textarea w-full text-gray-900" :class="darkMode ? 'text-gray-900' : ''"></textarea>
-    </label>
-    <div class="col-span-2">
-      <button type="submit" class="text-sm px-4 py-3 rounded font-black uppercase tracking-wide bg-indigo-500 text-white">Submit</button>
+{% extends 'page.njk' %}
+
+{% block body %}
+
+  <section class="gradient-purple text-white py-8 lg:py-16">
+    <div class="container max-w-screen-md mx-auto text-center">
+      <h1 class="text-2xl sm:text-3xl xl:text-4xl font-bold leading-none">
+        {{ heading }}
+      </h1>
+      <p class="mt-4 text-sm sm:text-base text-indigo-100">{{ description }}</p>
     </div>
-  </div>
-</form>
+  </section>
+  <span class="w-full h-12 block gradient-purple text-gray-100">
+    {% include 'icons/waves.svg' %}
+  </span>
+
+  <form name="contact" method="post" aria-label="contact form" action="/#contact" class="container max-w-screen-md">
+    <input type="hidden" name="form-name" value="contact">
+    <div class="mt-16 grid grid-cols-2 gap-8">
+      <label class="col-span-2 md:col-span-1">
+        <span class="block">Name:</span>
+        <input name="name" type="text" required="" class="mt-2 form-input w-full text-gray-900" :class="darkMode ? 'text-gray-900' : ''">
+      </label>
+      <label class="col-span-2 md:col-span-1">
+        <span class="block">Email:</span>
+        <input name="email" type="email" required="" class="mt-2 form-input w-full text-gray-900" :class="darkMode ? 'text-gray-900' : ''">
+      </label>
+      <label class="col-span-2">
+        <span class="block">Message:</span>
+        <textarea name="message" rows="7" required="" class="mt-2 form-textarea w-full text-gray-900" :class="darkMode ? 'text-gray-900' : ''"></textarea>
+      </label>
+      <div class="col-span-2">
+        <button type="submit" class="text-sm px-4 py-3 rounded font-black uppercase tracking-wide bg-indigo-500 text-white">Submit</button>
+      </div>
+    </div>
+  </form>
+
+{% endblock body %}
+
+

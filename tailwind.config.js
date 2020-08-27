@@ -25,8 +25,8 @@ module.exports = {
   ],
   purge: [
     './src/**/*.js',
+    './src/**/*.md',
     './src/**/*.njk',
-    './src/**/*.svelte',
     './src/**/*.svg',
   ],
 }

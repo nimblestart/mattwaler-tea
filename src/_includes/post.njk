@@ -1,0 +1,48 @@
+{% extends 'page.njk' %}
+
+{% block body %}
+
+  <nav class="gradient-purple text-indigo-200 py-4">
+    <div class="container">
+      <a class="flex items-center" href="/blog/">
+        <span class="w-4 transform rotate-180">
+          {% include 'icons/arrow.svg' %}
+        </span>
+        <span class="ml-1">
+          Go Back
+        </span>
+      </a>
+    </div>
+  </nav>
+
+  <section class="gradient-purple text-white py-8 lg:py-16">
+    <div class="container max-w-screen-md mx-auto text-center">
+      <p class="uppercase font-bold text-indigo-300 text-sm">{{ date | date }}</p>
+      <h1 class="mt-2 text-2xl sm:text-3xl xl:text-4xl font-bold leading-none">
+        {{ title }}
+      </h1>
+      <p class="mt-4 text-sm sm:text-base text-indigo-100">{{ excerpt }}</p>
+    </div>
+  </section>
+  <span class="w-full h-12 block gradient-purple text-gray-100">
+    {% include 'icons/waves.svg' %}
+  </span>
+
+  {# TLDR #}
+  {% if tldr %}
+    <section class="container max-w-screen-md mt-16">
+      <div class="border-l-2 border-indigo-500 pl-4 mb-16">
+        <p class="block text-2xl font-black">Too Long, Didn't Read (TLDR)</p>
+        <p class="mt-2">
+          {{ tldr | safe }}
+        </p>
+      </div>
+    </section>
+  {% endif %}
+
+  {# Content #}
+  <section class="container max-w-screen-md prose lg:prose-lg mt-16">
+    {{ content | safe }}
+  </section>
+
+{% endblock body %}

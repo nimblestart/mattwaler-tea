@@ -1,3 +1,20 @@
-.bw {
-  filter: grayscale(100%);
+.gradient-purple {
+  @apply bg-gradient-to-r from-indigo-500 via-indigo-700 to-indigo-900;
+}
+
+@keyframes grow {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.2);
+    transform-origin: center;
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+.animate-grow {
+  animation: grow ease 3s infinite;
 }
