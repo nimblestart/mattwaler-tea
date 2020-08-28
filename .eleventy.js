@@ -1,6 +1,6 @@
 const rss = require('@11ty/eleventy-plugin-rss')
 const highlighting = require('@11ty/eleventy-plugin-syntaxhighlight')
-const format = require('date-fns/format')
+const prettyDate = require('./src/_includes/filters/prettyDate')
 
 module.exports = (config) => {
   config.addPassthroughCopy({ public: './' })
@@ -8,9 +8,7 @@ module.exports = (config) => {
   config.addPlugin(rss)
   config.addPlugin(highlighting)
 
-  config.addFilter('date', function(value) {
-    return format(value, 'MMMM d, yyyy')
-  })
+  config.addFilter('prettyDate', prettyDate)
 
   config.setBrowserSyncConfig({
     files: ['dist/**/*'],

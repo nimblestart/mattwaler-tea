@@ -5,7 +5,8 @@ description:
   I am Matt Waler, a freelance fullstack developer providing fullstack consulting and development.
 ---
 
-{% set codeBlock %}
+{% set code %}
+{% highlight "js" %}
 let isSiteAwesome = false
 let didMattBuildIt = false
 
@@ -16,6 +17,7 @@ function contactMatt(message) {
 if (!isSiteAwesome || didMattBuildIt) {
   return contactMatt('Contact Matt!')
 }
+{% endhighlight %}
 {% endset %}
 
 {% extends 'page.njk' %}
@@ -34,7 +36,7 @@ if (!isSiteAwesome || didMattBuildIt) {
     "
     x-cloak
     x-show.transition="didSubmit"
-    class="fixed bottom-0 right-0 m-8 bg-white p-6 shadow-lg rounded-lg z-50 max-w-md"
+    class="fixed top-0 right-0 m-8 bg-white p-6 shadow-lg rounded-lg z-50 max-w-md"
   >
     <div class="flex items-center">
       <span class="flex-none w-16 text-teal-500 rounded-full">
@@ -49,11 +51,12 @@ if (!isSiteAwesome || didMattBuildIt) {
 
   <section class="gradient-purple text-white">
     <div class="container py-8 text-center relative lg:py-16 lg:text-left">
-      <img
-        src="/assets/forehands.gif"
+      <div
+        src="/assets/fam.jpg"
         alt="me playing tennis"
-        class="object-cover shadow-lg rounded-lg w-full sm:w-2/3 md:w-1/2 mx-auto lg:hidden"
-      >
+        style="background-image: url(/assets/fam.jpg)"
+        class="bg-cover h-64 bg-gray-400 shadow-lg rounded-lg w-full md:w-3/4 mx-auto lg:hidden"
+      ></div>
       <div class="mt-10 lg:mt-0 lg:w-1/2">
         <h1 class="text-2xl sm:text-3xl xl:text-4xl font-bold leading-none">
           <span>
@@ -63,23 +66,23 @@ if (!isSiteAwesome || didMattBuildIt) {
             in exchange for money.
           </span>
         </h1>
-        <p class="mt-4 text-sm sm:text-base text-indigo-100 ">I also love Tennis, Chipotle, and the occasional White Claw.</p>
+        <p class="mt-4 text-sm sm:text-base text-indigo-100 ">I also love Tennis, Chipotle, and spending time with family.</p>
       </div>
 
-      {# Big Viewport Offset Imagess #}
-      <img
-        class="object-cover absolute shadow-lg rounded-lg hidden xl:block mr-6"
-        src="/assets/forehands.gif"
-        style="width: 640px; height: 320px; top: 48px; right: 0;"
-      >
+      {# Large #}
+      <div
+        class="bg-gray-400 bg-cover bg-center absolute shadow-lg rounded-lg hidden lg:block xl:hidden mr-6"
+        src="/assets/fam.jpg"
+        style="width: 480px; height: 280px; top: 48px; right: 0; background-image: url(/assets/fam.jpg)"
+      ></div>
 
-      <img
-        class="object-cover absolute shadow-lg rounded-lg hidden lg:block xl:hidden mr-6"
-        src="/assets/forehands.gif"
-        style="width: 480px; height: 280px; top: 48px; right: 0;"
-      >
-
+      {# XL #}
+      <div
+        class="bg-gray-400 bg-cover bg-center absolute shadow-lg rounded-lg hidden xl:block mr-6"
+        style="width: 640px; height: 360px; top: 48px; right: 0; background-image: url(/assets/fam.jpg)"
+      ></div>
     </div>
+
   </section>
 
   {# Waves & Offset Correction  #}
@@ -145,9 +148,7 @@ if (!isSiteAwesome || didMattBuildIt) {
         <div class="rounded-full w-3 h-3 bg-green-500"></div>
       </div>
       <div class="mt-2">
-        {%- highlight "js" -%}
-          {{ codeBlock | safe }}
-        {%- endhighlight -%}
+        {{ code | safe }}
       </div>
     </div>
 
@@ -165,7 +166,15 @@ if (!isSiteAwesome || didMattBuildIt) {
       <p class="mt-2 sm:mt-4 text-sm sm:text-base lg:text-lg">
         Don't get <strong class="font-bold italic">Frozen</strong> with a site you don't love. I can refactor, refresh, or even straight-up build you a new website or web application that will knock your socks off.
       </p>
-      <a class="inline-block mt-6 bg-indigo-500 rounded font-semibold text-white px-4 py-2" href="/contact/">Contact</a>
+      <a
+        class="inline-flex items-center mt-6 text-indigo-500 rounded font-bold "
+        href="/contact/"
+      >
+        Contact
+        <span class="w-4 h-4 ml-1">
+          {% include 'icons/arrow.svg' %}
+        </span>
+      </a>
     </div>
   </section>
 
