@@ -9,7 +9,7 @@ tlrd: Clean up some conditional statements by using switch statements, not if-el
 
 Despite being nowhere in the current documentation at the time of writing this, the switch statement, which can be very useful, is fully supported in Nunjucks. Here is an example below of how to use it.
 
-{% raw %}
+::: codeblock
 ```twig
 <!-- Conditional -->
 {% set test = false %}
@@ -25,6 +25,6 @@ Despite being nowhere in the current documentation at the time of writing this, 
 <!-- Output -->
 <p>This is false</p>
 ```
-{% endraw %}
+:::
 
 Enjoy dryer conditional statements!

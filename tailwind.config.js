@@ -20,7 +20,6 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/custom-forms'),
-    require('@tailwindcss/typography'),
     require('tailwindcss-debug-screens'),
   ],
   purge: [

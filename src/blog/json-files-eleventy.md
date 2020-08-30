@@ -11,8 +11,7 @@ In 11ty, you are able to customize the filetype of the exported template just by
 
 In the following example, I am looping over a pretend posts collection inside 11ty to build a JSON file of data.
 
-{% raw %}
-
+::: codeblock
 ```twig
 ---
 permalink: /api/posts.json
@@ -28,11 +27,11 @@ permalink: /api/posts.json
   {% endfor  %}
 ]
 ```
-
-{% endraw %}
+:::
 
 This template will output the following JSON file.
 
+::: codeblock
 ```json
 [
   {
@@ -52,11 +51,13 @@ This template will output the following JSON file.
   }
 ]
 ```
+:::
 
 With this data now exported to a file in your site, you could consume it with a library like axios (or fetch if you're hardcore) in order to build out functionalities like search and sorting/filtering with a library like Svelte!
 
 Here is how you would now access your new JSON file.
 
+::: codeblock
 ```js
 import axios from 'axios'
 async function getPosts() {
@@ -64,15 +65,18 @@ async function getPosts() {
   return data
 }
 ```
+:::
 
 Note! You can also configure all files in a directory to output to JSON by adding a **directory data file**. That file can look something like this:
 
+::: codeblock
 ```js
 // File: /pages/api/api.11tydata.js
 module.exports = {
   permalink: '/api/{{ page.fileSlug }}.json',
 }
 ```
+:::
 
 This will automatically export any templates inside this directory straight to JSON!
 

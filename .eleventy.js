@@ -1,30 +1,32 @@
 const highlighting = require('@11ty/eleventy-plugin-syntaxhighlight')
 const rss = require('@11ty/eleventy-plugin-rss')
-const prettyDate = require('./src/_includes/filters/prettyDate')
+const markdown = require('./src/_config/markdown')
+const prettyDate = require('./src/_config/prettyDate')
 
 module.exports = (config) => {
   config.addFilter('prettyDate', prettyDate)
   config.addPassthroughCopy({ public: './' })
-  config.addPlugin(rss)
   config.addPlugin(highlighting)
+  config.addPlugin(rss)
   config.setBrowserSyncConfig({
     files: ['dist/**/*'],
     open: true,
     snippetOptions: {
       rule: {
-        match: /<\/head>/i,
         fn: function (snippet, match) {
           return snippet + match
         },
+        match: /<\/head>/i,
       },
     },
   })
   config.setDataDeepMerge(true)
+  config.setLibrary('md', markdown)
   return {
     dir: {
       input: 'src',
       output: 'dist',
     },
-    markdownTemplateEngine: "njk",
+    markdownTemplateEngine: false,
   }
 }

@@ -17,7 +17,10 @@ I was talking to an ex-coworker about the idea, and he also agreed he never hear
 The name came a little later on. We were going back and forth on the direction of the service when I had the idea for the tagline *"Bridging the gap"*. He replied with *"Yeah, like an overpass."* I was sold right then and there.
 
 Here's a little teaser of what the site looks like:
-![Overpass Image](/assets/overpass.jpg)
+
+::: image
+![Overpass](/assets/overpass.jpg)
+:::
 
 And here's the long-awaited [link!](https://overpass.mattwaler.com)
 
