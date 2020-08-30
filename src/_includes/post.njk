@@ -2,19 +2,6 @@
 
 {% block body %}
 
-  <nav class="gradient-purple text-indigo-200 py-4">
-    <div class="container">
-      <a class="flex items-center" href="/blog/">
-        <span class="w-4 transform rotate-180">
-          {% include 'icons/arrow.svg' %}
-        </span>
-        <span class="ml-1">
-          Go Back
-        </span>
-      </a>
-    </div>
-  </nav>
-
   <section class="gradient-purple text-white py-8 lg:py-16">
     <div class="container max-w-screen-md mx-auto text-center">
       <p class="uppercase font-bold text-indigo-300 text-sm">{{ date | prettyDate }}</p>
