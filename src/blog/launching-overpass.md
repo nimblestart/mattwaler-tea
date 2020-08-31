@@ -1,9 +1,8 @@
 ---
 title: Introducing Overpass
-excerpt: Overpass is a personalized pair-programming service offered by yours truly.
+excerpt:
+  Overpass is a personalized pair-programming service offered by yours truly.
 date: 2020-04-20
-tldr:
-  I launched a pair-programming service for helping others bridge the gap to modern frontend development frameworks and tooling like React, Vue, Svelte, and others called Overpass!
 ---
 
 ## The Origin Story
@@ -27,3 +26,7 @@ And here's the long-awaited [link!](https://overpass.mattwaler.com)
 The site is built with Eleventy, TailwindCSS, and Svelte. It's hosted on Netlify too!
 
 If you have a few minutes, please check it out and give me some feedback!
+
+::: tldr
+I launched a pair-programming service for helping others bridge the gap to modern frontend development frameworks and tooling like React, Vue, Svelte, and others called Overpass!
+:::

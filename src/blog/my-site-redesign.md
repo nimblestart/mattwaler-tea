@@ -5,10 +5,6 @@ excerpt:
 date: 2020-08-29
 ---
 
-::: tldr
-I utilized the TEA Stack (TailwindCSS, Eleventy, and AlpineJS) to create a simple, lean, and feature-packed new website!
-:::
-
 ## Why Redesign?
 
 As a web developer, your personal website is a reflection of you and a representation of your skillset. I was quite proud of my previous iteration, but I found it was lacking in a few key areas.
@@ -89,24 +85,116 @@ No JavaScript, no frameworks, just raw HTML.
 
 **Wrong!** [Turbolinks](https://github.com/turbolinks/turbolinks) to the rescue! Adding this to your finished bundle gives you buttery smooth page transitions between truly static pages, and harly adds any filesize to your bundle.
 
-Eleventy ships with built-in Markdown compiling, global data files accessible in templates, and endless customization and configuration made buildin
+Eleventy allows for a markdown-powered website, exposes a fantastic API for passing data to templates, and makes it crazy simple to add custom filters, plugins, and so much more.
 
 ### Plugins
 
-- Syntax Highlighting
-- RSS Feed
+- [Syntax Highlighting](https://github.com/11ty/eleventy-plugin-syntaxhighlight) to syntax highlight inline code with Prism **at build time**, not on the client
+- [RSS Feed](https://github.com/11ty/eleventy-plugin-rss) to generate the RSS feed automatically on build
 
 ## AlpineJS
 
-### Honorable Mention: Turbolinks
+This project contains **one** JavaScript file. That file looks like this:
+
+::: codeblock
+```js
+// This passes all postcss files through rollup and out into a single css file
+import './main.pcss'
+
+// Import and auto-initialize both Alpine and Turbolinks
+import 'alpinejs'
+import 'turbolinks'
+```
+:::
+
+That's right. All of the functionality on my site, like the mobile navigation and the year in the footer, are written in the template files.
+
+Take a look at the code in my footer to update the year client-side:
+
+::: codeblock
+```html
+<span
+  x-data=""
+  x-text="`Waler Media LLC | © ${new Date().getFullYear()}`"
+></span>
+```
+:::
+
+Or maybe the button code to toggle the mobile nav:
+
+::: codeblock
+```html
+<button @click="mobileNav = !mobileNav" class="w-6 h-6 md:hidden">
+  <span x-show="!mobileNav">
+    {% include 'icons/menu.svg' %}
+  </span>
+  <span x-show="mobileNav">
+    {% include 'icons/close.svg' %}
+  </span>
+</button>
+```
+:::
+
+With some vue-esque directives and custom attributes, I've got all the logic I need, and that logic is contained in the template file itself. So sexy.
 
 ### The Best Bundler: Rollup
 
+It's worth noting that I am using Rollup to compile and split the CSS/JS files. I will always advocate using Rollup over Webpack, as the syntax is lightyears easier to grok and configure.
+
+Here is my entire Rollup configuration file:
+
+::: codeblock
+```js
+import commonjs from '@rollup/plugin-commonjs'
+import postcss from 'rollup-plugin-postcss'
+import resolve from '@rollup/plugin-node-resolve'
+import { terser } from 'rollup-plugin-terser'
+
+const prod = process.env.NODE_ENV == 'production'
+
+export default {
+  input: 'src/_bundle/main.js',
+  output: {
+    sourcemap: false,
+    format: 'iife',
+    name: 'main',
+    file: 'dist/assets/main.bundle.js',
+  },
+  plugins: [
+    postcss({
+      extract: 'dist/assets/main.bundle.css',
+      minimize: prod,
+    }),
+    resolve({
+      browser: true,
+    }),
+    commonjs(),
+    prod && terser(),
+  ],
+  watch: {
+    clearScreen: false,
+  },
+}
+```
+:::
+
 ## Inspiration
 
-- Heroicons
-- TailwindCSS Blog
-- Get Waves
-- Blob Maker
-- Massage Envy
+The design, tools, and stack was derived from a bunch of great tools and sites I follow very closely. I would feel like I am plaigerizing if I didn't devote a section on this post to point to things that helped bring this site to life:
 
+- [Blob Maker](https://www.blobmaker.app/)
+- [Get Waves](https://getwaves.io/)
+- [Heroicons](https://heroicons.com)
+- [Make VS Code Awesome](https://makevscodeawesome.com/)
+- [Massage Envy](https://www.massageenvy.com/)
+- [TailwindCSS Blog](https://blog.tailwindcss.com)
+
+## Peep The Source
+
+My personal website will always be publicly available on GitHub, so feel free to poke around yourself to see how things work! Some of the content in this post may not be 100% up-to-date, so check that out if you're feeling curious!
+
+Thanks for reading, and as always, stay sexy.
+
+::: tldr
+I utilized the TEA Stack (TailwindCSS, Eleventy, and AlpineJS) to create a simple, lean, and feature-packed new website!
+:::

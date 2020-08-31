@@ -1,8 +1,8 @@
 ---
 title: Switch Statements Exist in Nunjucks
-excerpt: Despite not being in the docs, you can absolutely use switch statements in Nunjucks. In this blog post I show you how it's done!
+excerpt:
+  Despite not being in the docs, you can absolutely use switch statements in Nunjucks. In this blog post I show you how it's done!
 date: 2020-03-15
-tlrd: Clean up some conditional statements by using switch statements, not if-else blocks.
 ---
 
 ## It's not a bug, it's a feature
@@ -28,3 +28,7 @@ Despite being nowhere in the current documentation at the time of writing this, 
 :::
 
 Enjoy dryer conditional statements!
+
+::: tldr
+Clean up some conditional statements by using switch statements, not if-else blocks.
+:::

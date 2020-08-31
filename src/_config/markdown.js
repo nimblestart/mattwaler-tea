@@ -6,15 +6,14 @@ const markdown = md()
     render: function (tokens, idx) {
       if (tokens[idx].type === 'container_codeblock_open') {
         return /*html*/`
-          <div class="bg-gray-900 p-2 text-white rounded-lg shadow-lg">
-            <div class="p-2 space-x-2 flex items-center">
+          <div class="bg-gray-900 p-4 text-white rounded-lg shadow-lg">
+            <div class="space-x-2 flex items-center">
               <div class="rounded-full w-3 h-3 bg-red-500"></div>
               <div class="rounded-full w-3 h-3 bg-yellow-500"></div>
               <div class="rounded-full w-3 h-3 bg-green-500"></div>
             </div>
-            <div class="p-4">
         `
-      } return /*html*/`</div></div>`
+      } return /*html*/`</div>`
     }
   })
   .use(mdContainer, 'tldr', {
@@ -22,7 +21,7 @@ const markdown = md()
       if (tokens[idx].type === 'container_tldr_open') {
         return /*html*/`
         <div class="border-l-2 border-indigo-500 pl-4 mb-16">
-          <h3>Too Long, Didn't Read</h3>
+          <span class="text-2xl font-extrabold">Too Long, Didn't Read</span>
           <div class="mt-2">
         `
       } return /*html*/`</div></div>`
