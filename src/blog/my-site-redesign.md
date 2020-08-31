@@ -1,5 +1,5 @@
 ---
-title: My Brand New Site
+title: My New Website
 description:
   In this post I talk about the goals, tools, and why I decided to rebuild my personal site.
 excerpt:
