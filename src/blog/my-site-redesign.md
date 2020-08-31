@@ -9,7 +9,7 @@ date: 2020-08-29
 
 As a web developer, your own site is a reflection of you and skillset. I was proud of my previous iteration, but I knew it could be better. I found it was lacking in a few key areas.
 
-My last site iteration was only one page. That single page was also quite heavy on text and lacked imagery. Most importantly, it lacked my personality and the projects and sites I am most proud of! I am certain that prospective clients visited my site, saw no sustance, and dipped.
+My last site iteration was only one page. That single page was also quite heavy on text and lacked imagery. Most importantly, it lacked my personality and the projects and sites I am most proud of! I am certain that prospective clients visited my site, saw no substance, and dipped the hell out.
 
 ## Requirements and Goals
 
