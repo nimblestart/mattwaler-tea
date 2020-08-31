@@ -9,7 +9,7 @@ date: 2020-08-29
 
 ## Why Redesign?
 
-As a web developer, your own site is a reflection of you and skillset. I was proud of my previous iteration, but I knew it could be better. I found it was lacking in a few key areas:
+As a web developer, your personal site is a reflection of yourself and your skill set. I was proud of my previous iteration, but I knew it could be better. I found it was lacking in a few key areas:
 
 - Was only one page
 - Very text heavy
