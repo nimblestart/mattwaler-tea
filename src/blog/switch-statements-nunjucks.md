@@ -28,7 +28,3 @@ Despite being nowhere in the current documentation at the time of writing this, 
 :::
 
 Enjoy dryer conditional statements!
-
-::: tldr
-Clean up some conditional statements by using switch statements, not if-else blocks.
-:::

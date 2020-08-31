@@ -80,9 +80,3 @@ module.exports = {
 This will automatically export any templates inside this directory straight to JSON!
 
 Eleventy is a fantastic platform and it has the potential to exceed traditional static site generation to include data files that can be consumed and made more dynamic on your site!
-
-::: tldr
-
-You can export a template to any file type you want by setting a template's `permalink` value to the desired extension. For example, you can export JSON by setting `permalink: '/data/posts.json'` in a template's front matter.
-
-:::

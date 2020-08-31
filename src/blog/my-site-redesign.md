@@ -7,7 +7,7 @@ date: 2020-08-29
 
 ## Why Redesign?
 
-As a web developer, your personal website is a reflection of you and a representation of your skillset. I was quite proud of my previous iteration, but I found it was lacking in a few key areas.
+As a web developer, your own site is a reflection of you and skillset. I was proud of my previous iteration, but I knew it could be better. I found it was lacking in a few key areas.
 
 My last site iteration was only one page. That single page was also quite heavy on text and lacked imagery. Most importantly, it lacked my personality and the projects and sites I am most proud of! I am certain that prospective clients visited my site, saw no sustance, and dipped.
 
@@ -191,10 +191,6 @@ The design, tools, and stack was derived from a bunch of great tools and sites I
 
 ## Peep The Source
 
-My personal website will always be publicly available on GitHub, so feel free to poke around yourself to see how things work! Some of the content in this post may not be 100% up-to-date, so check that out if you're feeling curious!
+My website's [source code](https://github.com/mattwaler/mattwaler.com) will always be public on GitHub, so feel free to poke around yourself to see how things work! Some of the content in this post may not be 100% up-to-date, so check that out if you're feeling curious!
 
 Thanks for reading, and as always, stay sexy.
-
-::: tldr
-I utilized the TEA Stack (TailwindCSS, Eleventy, and AlpineJS) to create a simple, lean, and feature-packed new website!
-:::
