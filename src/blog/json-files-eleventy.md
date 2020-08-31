@@ -1,9 +1,8 @@
 ---
 title: Exporting JSON with Eleventy
-excerpt: Eleventy doesn't only just export HTML. You can leverage it's power to output any file type you want. In this post, I show you how to export JSON so it can be consumed dynamically in the client!
+excerpt:
+  Eleventy doesn't only just export HTML. You can leverage it's power to output any file type you want. In this post, I show you how to export JSON so it can be consumed dynamically in the client!
 date: 2020-03-26
-tldr:
-  "You can export a template to any file type you want by setting a template's `permalink` value to the desired extension. For example, you can export JSON by setting `permalink: '/data/posts.json'` in a template's front matter."
 ---
 
 ## The sky's the limit

@@ -1,9 +1,8 @@
 ---
 title: Introducing Overpass
-excerpt: Overpass is a personalized pair-programming service offered by yours truly.
+excerpt:
+  Overpass is a personalized pair-programming service offered by yours truly.
 date: 2020-04-20
-tldr:
-  I launched a pair-programming service for helping others bridge the gap to modern frontend development frameworks and tooling like React, Vue, Svelte, and others called Overpass!
 ---
 
 ## The Origin Story

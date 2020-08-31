@@ -15,18 +15,6 @@
     {% include 'icons/waves.svg' %}
   </span>
 
-  {# TLDR #}
-  {% if tldr %}
-    <section class="container max-w-screen-md mt-16">
-      <div class="border-l-2 border-indigo-500 pl-4 mb-16">
-        <p class="block text-2xl font-black">Too Long, Didn't Read</p>
-        <p class="mt-2 text-lg text-gray-800 leading-relaxed">
-          {{ tldr | safe }}
-        </p>
-      </div>
-    </section>
-  {% endif %}
-
   {# Content #}
   <section class="container max-w-screen-md markdown mt-16">
     {{ content | safe }}
