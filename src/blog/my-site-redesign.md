@@ -9,9 +9,14 @@ date: 2020-08-29
 
 ## Why Redesign?
 
-As a web developer, your own site is a reflection of you and skillset. I was proud of my previous iteration, but I knew it could be better. I found it was lacking in a few key areas.
+As a web developer, your own site is a reflection of you and skillset. I was proud of my previous iteration, but I knew it could be better. I found it was lacking in a few key areas:
 
-My last site iteration was only one page. That single page was also quite heavy on text and lacked imagery. Most importantly, it lacked my personality and the projects and sites I am most proud of! I am certain that prospective clients visited my site, saw no substance, and dipped the hell out.
+- Was only one page
+- Very text heavy
+- Lacked personality
+- Portfolio aspects were missing
+
+In hindsight, I am certain that prospective clients visited my site, saw very little imagery or proof of my skills, and bounced.
 
 ## Requirements and Goals
 
@@ -83,9 +88,9 @@ Copied 1 item and Processed 11 files in 0.38 seconds
 
 No JavaScript, no frameworks, just raw HTML.
 
-> But now you don't get those dope-ass page transitions that feel like an app!
+> But now you don't get those _**dope**_ page transitions that feel like an app!
 
-**Wrong!** [Turbolinks](https://github.com/turbolinks/turbolinks) to the rescue! Adding this to your bundle will grant you buttery smooth page transitions for only:
+**Wrong!** [Turbolinks](https://github.com/turbolinks/turbolinks) can provide this functionality for us. Adding this to your bundle will grant you buttery smooth page transitions for quite the bargain:
 
 ::: codeblock
 ```bash
