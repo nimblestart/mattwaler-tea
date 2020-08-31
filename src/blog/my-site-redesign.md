@@ -1,5 +1,7 @@
 ---
 title: My Brand New Site
+description:
+  In this post I talk about the goals, tools, and why I decided to rebuild my personal site.
 excerpt:
   I finally released my new personal website, complete with a blog and an RSS feed. In this post I talk about my goals for the rebuild and the tools I used to make it happen.
 date: 2020-08-29
@@ -83,11 +85,21 @@ No JavaScript, no frameworks, just raw HTML.
 
 > But now you don't get those dope-ass page transitions that feel like an app!
 
-**Wrong!** [Turbolinks](https://github.com/turbolinks/turbolinks) to the rescue! Adding this to your finished bundle gives you buttery smooth page transitions between truly static pages, and harly adds any filesize to your bundle.
+**Wrong!** [Turbolinks](https://github.com/turbolinks/turbolinks) to the rescue! Adding this to your bundle will grant you buttery smooth page transitions for only:
+
+::: codeblock
+```bash
+# package-size is a fantastic tool to quickly check filesize
+npx package-size turbolinks
+
+package             size        minified    gzipped
+turbolinks@5.2.0    39.79 KB    37.78 KB    8.74 KB
+```
+:::
 
 Eleventy allows for a markdown-powered website, exposes a fantastic API for passing data to templates, and makes it crazy simple to add custom filters, plugins, and so much more.
 
-### Plugins
+### Eleventy Plugins
 
 - [Syntax Highlighting](https://github.com/11ty/eleventy-plugin-syntaxhighlight) to syntax highlight inline code with Prism **at build time**, not on the client
 - [RSS Feed](https://github.com/11ty/eleventy-plugin-rss) to generate the RSS feed automatically on build

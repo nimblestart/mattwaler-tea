@@ -1,7 +1,9 @@
 ---
 title: Introducing Overpass
+description:
+  Learn about Overpass, my personalized pair-programming service for developers to learn modern frontend tooling and frameworks.
 excerpt:
-  Overpass is a personalized pair-programming service offered by yours truly.
+  Overpass is my personalized pair-programming service for developers to learn modern frontend tooling and frameworks. Learn about it here!
 date: 2020-04-20
 ---
 

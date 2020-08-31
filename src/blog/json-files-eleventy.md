@@ -1,5 +1,6 @@
 ---
 title: Exporting JSON with Eleventy
+description: Learn how to export file types other than HTML in Eleventy.
 excerpt:
   Eleventy doesn't only just export HTML. You can leverage it's power to output any file type you want. In this post, I show you how to export JSON so it can be consumed dynamically in the client!
 date: 2020-03-26
