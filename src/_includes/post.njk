@@ -10,9 +10,6 @@
     paragraph = description
   ) }}
 
-  {# Image for RSS Feed #}
-  <img class="hidden" src="{{ image or '/assets/post.jpg' }}" alt="RSS feed image">
-
   {# Content #}
   <section class="container max-w-screen-md markdown mt-16">
     {{ content | safe }}
