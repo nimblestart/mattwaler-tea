@@ -1,3 +1,5 @@
+const defaults = require('tailwindcss/defaultTheme')
+
 module.exports = {
   theme: {
     container: {
@@ -16,6 +18,13 @@ module.exports = {
     }),
     debugScreens: {
       position: ['bottom', 'right'],
+    },
+    extend: {
+      spacing: {
+        '72': '18rem',
+        '84': '21rem',
+        '96': '24rem',
+      },
     },
   },
   plugins: [

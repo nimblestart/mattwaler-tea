@@ -1,30 +1,44 @@
 ---
 title: Introducing Overpass
 description:
-  Learn about Overpass, my personalized pair-programming service for developers to learn modern frontend tooling and frameworks.
-excerpt:
-  Overpass is my personalized pair-programming service for developers to learn modern frontend tooling and frameworks. Learn about it here!
+  Overpass is my personalized pair-programming service for developers to learn modern frontend tooling and frameworks.
 date: 2020-04-20
+image: /assets/overpass.jpg
 ---
 
-## The Origin Story
+## The Idea
 
-I realized recently that while there are a gagillion tutorials on YouTube, I was never able to find any services that offered such a vital skill in being a developer on a team, pair-programming.
+First of all, I think it is worth noting that while I went to college, I did not go to school to be a developer. I was pushed towards development by my first employer, for which I was just a content editor.
 
-It was at that point I decided it was time to do something about that.
+I learned development through trial, error, and most importantly, YouTube.
 
-I was talking to an ex-coworker about the idea, and he also agreed he never heard about anything quite like it, and that it could be valuable to both junior web developers as well as backend developers who want to start expanding into frontend.
+It was not until recently that I realized that while there are a billion tutorials on YouTube, I never came across a service that offered a vital skill that I lacked when I started, pair-programming.
 
-The name came a little later on. We were going back and forth on the direction of the service when I had the idea for the tagline *"Bridging the gap"*. He replied with *"Yeah, like an overpass."* I was sold right then and there.
+### The Name
 
-Here's a little teaser of what the site looks like:
+I started reaching out to my fellow developers to see if the idea was a turd or not. In those discussions, I found comfort in knowing that most people I talked to seem to really like the idea, and find value in it immediately.
 
-::: image
-![Overpass](/assets/overpass.jpg)
-:::
+In one particular conversation, we got quite deep into why the service could be valuable. This service was useful to a wide range of developers:
 
-And here's the long-awaited [link!](https://overpass.mattwaler.com)
+- Newly graduated junior developers
+- Backend developers looking to get into frontend
+- Frontend developers with expertise in less modern frontend tooling
+- Beginners just looking to develop at all
 
-The site is built with Eleventy, TailwindCSS, and Svelte. It's hosted on Netlify too!
+As we discussed this further, we struggled to find a tagline. Eventually, words slipped from my mouth that sparked an idea in my friend's mind:
 
-If you have a few minutes, please check it out and give me some feedback!
+I said:
+
+> You know, like *bridging the gap* for developers to modern stuff.
+
+He quickly agreed with:
+
+> Yeah, like an *overpass*.
+
+I was sold immediately.
+
+I built the site within the week with a little help from Eleventy, TailwindCSS, Svelte, and Netlify. It's hosted on Netlify too!
+
+If you have a few minutes, please [check it out for yourself](https://overpass.mattwaler.com)!
+
+Thank you for reading, stay beautiful.

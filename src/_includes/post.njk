@@ -1,19 +1,17 @@
 {% extends 'page.njk' %}
+{% from 'hero.njk' import hero  %}
 
 {% block body %}
 
-  <section class="gradient-purple text-white py-8 lg:py-16">
-    <div class="container max-w-screen-md mx-auto text-center">
-      <p class="uppercase font-bold text-indigo-300 text-sm">{{ date | prettyDate }}</p>
-      <h1 class="mt-2 text-2xl sm:text-3xl xl:text-4xl font-bold leading-none">
-        {{ title }}
-      </h1>
-      <p class="mt-4 text-sm sm:text-base text-indigo-100">{{ excerpt }}</p>
-    </div>
-  </section>
-  <span class="w-full h-12 block gradient-purple text-gray-100">
-    {% include 'icons/waves.svg' %}
-  </span>
+  {{ hero(
+    image = image,
+    eyebrow = date | prettyDate,
+    heading = title,
+    paragraph = description
+  ) }}
+
+  {# Image for RSS Feed #}
+  <img class="hidden" src="{{ image or '/assets/post.jpg' }}" alt="RSS feed image">
 
   {# Content #}
   <section class="container max-w-screen-md markdown mt-16">

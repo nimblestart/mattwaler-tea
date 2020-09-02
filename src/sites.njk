@@ -1,25 +1,20 @@
 ---
 title: Sites
-description: A list of some of the sites I've graced my presence with.
-hero:
-  heading: Websites I have helped bring to life.
-  subheading: Here is a list of some of the websites I've graced my presence with.
+heading: Websites I brought to life.
+description: Below you will find a list of some of the sites I've helped design, build, and deploy to the internet. Give them a peep!
 ---
 
 {% extends 'page.njk' %}
+{% from 'hero.njk' import hero  %}
 
 {% block body %}
-  <section class="gradient-purple text-white py-8 lg:py-16">
-    <div class="container max-w-screen-md mx-auto text-center">
-      <h1 class="text-2xl sm:text-3xl xl:text-4xl font-bold leading-none">
-        {{ hero.heading }}
-      </h1>
-      <p class="mt-4 text-sm sm:text-base text-indigo-100">{{ hero.subheading }}</p>
-    </div>
-  </section>
-  <span class="w-full h-12 block gradient-purple text-gray-100">
-    {% include 'icons/waves.svg' %}
-  </span>
+
+  {{ hero(
+    image = '/assets/sites.jpg',
+    eyebrow = 'Check out all of these',
+    heading = heading,
+    paragraph = description
+  ) }}
 
   <section class="container max-w-screen-lg mt-16">
     {% for site in collections.sites %}

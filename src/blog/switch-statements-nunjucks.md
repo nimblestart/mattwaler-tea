@@ -2,9 +2,8 @@
 title: Switch Statements Exist in Nunjucks
 description:
   Learn how to use switch statements in Nunjucks, even though they are missing from the official documentation.
-excerpt:
-  Despite not being in the docs, you can absolutely use switch statements in Nunjucks. In this blog post I show you how it's done!
 date: 2020-03-15
+image: /assets/nunchucks.jpg
 ---
 
 ## It's not a bug, it's a feature

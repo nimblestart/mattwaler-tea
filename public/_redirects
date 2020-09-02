@@ -1,7 +1,8 @@
-/about              /
-/contact            /contact/
-/MattWaler.pdf      /
-/posts/             /blog/
-/posts/*            /blog/
-/skills/            /
-/services/          /
+/about/                        /
+/blog/my-site-redesign/       /blog/rebuilding-website-tea-stack/
+/contact                      /contact/
+/MattWaler.pdf                /
+/posts/                       /blog/
+/posts/*                      /blog/
+/skills/                      /
+/services/                    /

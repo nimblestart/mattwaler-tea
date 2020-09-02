@@ -1,10 +1,9 @@
 ---
-title: My New Website
+title: Rebuilding My Website with the TEA Stack
 description:
-  In this post I talk about the goals, tools, and why I decided to rebuild my personal site.
-excerpt:
-  I finally released my new personal website, complete with a blog and an RSS feed. In this post I talk about my goals for the rebuild and the tools I used to make it happen.
+  In this post I talk about the goals I had for the website rebuild, and how I used the TEA Stack to make it happen.
 date: 2020-08-29
+image: /assets/kermit.jpg
 ---
 
 ## Why Redesign?

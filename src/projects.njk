@@ -1,25 +1,22 @@
 ---
 title: Projects
 description: A listing of all the stuff I think is worth showing off.
-hero:
-  heading: What I have been working on.
-  subheading: Here is a list of the projects that actually came to fruition. I am 99% sure the code for all of these are publicly available on my GitHub if you're itching to see some source code.
+heading: Projects I'm working on.
+paragraph:
+  Here is a list of the projects that actually came to fruition. I am 99% sure the code for all of these are publicly available on my GitHub if you're itching to see some source code.
 ---
 
 {% extends 'page.njk' %}
+{% from 'hero.njk' import hero  %}
 
 {% block body %}
-  <section class="gradient-purple text-white py-8 lg:py-16">
-    <div class="container max-w-screen-md mx-auto text-center">
-      <h1 class="text-2xl sm:text-3xl xl:text-4xl font-bold leading-none">
-        {{ hero.heading }}
-      </h1>
-      <p class="mt-4 text-sm sm:text-base text-indigo-100">{{ hero.subheading }}</p>
-    </div>
-  </section>
-  <span class="w-full h-12 block gradient-purple text-gray-100">
-    {% include 'icons/waves.svg' %}
-  </span>
+
+  {{ hero(
+    image = '/assets/projects.jpg',
+    eyebrow = 'Get a load of all of these',
+    heading = heading,
+    paragraph = paragraph
+  ) }}
 
   <section class="container max-w-screen-lg mt-16">
     {% for item in collections.projects %}
@@ -50,4 +47,5 @@ hero:
       </article>
     {% endfor %}
   </section>
+
 {% endblock body %}

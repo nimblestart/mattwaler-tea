@@ -30,21 +30,21 @@ if (!isSiteAwesome || !didMattBuildIt) {
     x-init="window.location.hash === '#contact'
       ? function() {
         setTimeout(() => { didSubmit = true }, 500)
-        setTimeout(() => { didSubmit = false }, 3000)
+        setTimeout(() => { didSubmit = false }, 4000)
       }
       : null
     "
     x-cloak
     x-show.transition="didSubmit"
-    class="fixed top-0 right-0 m-8 bg-white p-6 shadow-lg rounded-lg z-50 max-w-md"
+    class="fixed top-0 right-0 m-8 bg-white py-6 px-4 shadow-lg rounded-lg z-50 max-w-lg"
   >
     <div class="flex items-center">
       <span class="flex-none w-16 text-teal-500 rounded-full">
         {% include 'icons/check.svg' %}
       </span>
       <div class="ml-4">
-        <p class="font-extrabold leading-none text-xl">Success!</p>
-        <p class="mt-2 text-sm">Thanks for filling out the contact form. I will be in touch very shortly.</p>
+        <p class="font-extrabold leading-none text-xl">Contact Success!</p>
+        <p class="mt-2 text-sm">Thank you for reaching out. I will be in touch.</p>
       </div>
     </div>
   </section>

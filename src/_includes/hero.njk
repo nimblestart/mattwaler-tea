@@ -1,0 +1,36 @@
+{% macro hero(
+  icon,
+  image = '/assets/fam.jpg',
+  eyebrow = 'Default Eyebrow',
+  heading = 'Default Heading',
+  paragraph = 'Default Paragraph',
+  belowParagraph
+) %}
+
+  <section class="gradient-purple text-white py-8 lg:py-16">
+    <div class="container md:flex md:items-center">
+      <div
+        class="h-64 lg:h-84 bg-gray-400 bg-cover bg-center rounded-lg shadow-lg md:w-1/2"
+        style="background-image: url({{ image or '/assets/post.jpg' }})"
+      ></div>
+      <div class="flex-1 mt-8 md:mt-0 md:ml-8 lg:ml-16">
+        <p class="uppercase font-bold text-indigo-300 text-sm">
+          {{ eyebrow | safe }}
+        </p>
+        <h1 class="mt-2 text-2xl sm:text-4xl font-bold leading-tight">
+          {{ heading | safe }}
+        </h1>
+        <p class="mt-4 text-base sm:text-lg lg:text-lg text-indigo-100">
+          {{ paragraph | safe }}
+        </p>
+        {% if belowParagraph %}
+          {{ belowParagraph | safe }}
+        {% endif %}
+      </div>
+    </div>
+  </section>
+  <span class="w-full h-12 block gradient-purple text-gray-100">
+    {% include 'icons/waves.svg' %}
+  </span>
+
+{% endmacro %}
