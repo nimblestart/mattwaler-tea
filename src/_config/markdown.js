@@ -16,23 +16,5 @@ const markdown = md()
       } return /*html*/`</div>`
     }
   })
-  .use(mdContainer, 'tldr', {
-    render: function (tokens, idx) {
-      if (tokens[idx].type === 'container_tldr_open') {
-        return /*html*/`
-        <div class="border-l-2 border-indigo-500 pl-4 mb-16">
-          <span class="text-2xl font-extrabold">Too Long, Didn't Read</span>
-          <div class="mt-2">
-        `
-      } return /*html*/`</div></div>`
-    }
-  })
-  .use(mdContainer, 'image', {
-    render: function (tokens, idx) {
-      if (tokens[idx].type === 'container_image_open') {
-        return /*html*/`<div class="overflow-hidden shadow-lg rounded-lg">`
-      } return /*html*/`</div>`
-    }
-  })
 
 module.exports = markdown
