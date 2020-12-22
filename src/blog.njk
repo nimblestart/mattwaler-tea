@@ -9,25 +9,12 @@ description:
 {% extends 'page.njk' %}
 {% from 'hero.njk' import hero  %}
 
-{% set rssButton %}
-  <a class="mt-8 inline-flex items-center border px-2 py-2 rounded" href="/feed.xml">
-    <span class="font-medium tracking-tight leading-none">
-      RSS Feed
-    </span>
-    <span class="ml-2 w-6 h-6 block">
-      {% include 'icons/rss.svg' %}
-    </span>
-  </a>
-{% endset %}
-
 {% block body %}
 
   {{ hero(
-    image = '/assets/blog.jpg',
     eyebrow = 'Subject to change',
     heading = heading,
-    paragraph = description,
-    belowParagraph = rssButton
+    paragraph = description
   ) }}
 
   <section class="container max-w-screen-md mt-16">
@@ -56,5 +43,7 @@ description:
       </article>
     {% endfor %}
   </section>
+
+  {% include 'contact-cta.njk' %}
 
 {% endblock %}

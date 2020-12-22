@@ -3,7 +3,6 @@ title: Introducing Overpass
 description:
   Overpass is my personalized pair-programming service for developers to learn modern frontend tooling and frameworks.
 date: 2020-04-20
-image: /assets/overpass.jpg
 ---
 
 ## The Idea

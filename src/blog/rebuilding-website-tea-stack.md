@@ -2,8 +2,7 @@
 title: Rebuilding My Website with the TEA Stack
 description:
   In this post I talk about the goals I had for the website rebuild, and how I used the TEA Stack to make it happen.
-date: 2020-08-29
-image: /assets/kermit.jpg
+date: 2020-12-22
 ---
 
 ## Why Redesign?
@@ -25,7 +24,6 @@ I had a few key goals in mind when I began the new iteration:
 - Showcase my personality
 - Showcase projects and websites
 - Markdown-powered blog & content
-- RSS Feed
 - Minimal JS/CSS bundles
 - Syntax highlighting in pages & posts
 - App-like page routing, without a frontend framework
@@ -77,7 +75,7 @@ All pages on this site are **truly** statically generated at build time with Ele
 
 Don't get me wrong, I think projects like Next, Gatsby, Nuxt, and Sapper are great. However, I believe the SSG aspects of these projects have major problems. Build times are atrocious, and the client-side JS bundles are massive even for tiny websites.
 
-Here's a look at the result from running `npm run build` on my site:
+Here's a look at the result from running `npm run build:11ty` on my site:
 
 ::: codeblock
 ```bash
@@ -106,7 +104,6 @@ Eleventy allows for a markdown-powered website, exposes a fantastic API for pass
 ### Eleventy Plugins
 
 - [Syntax Highlighting](https://github.com/11ty/eleventy-plugin-syntaxhighlight) to syntax highlight inline code with Prism **at build time**, not on the client
-- [RSS Feed](https://github.com/11ty/eleventy-plugin-rss) to generate the RSS feed automatically on build
 
 ## AlpineJS
 
@@ -152,47 +149,6 @@ Or maybe the button code to toggle the mobile nav:
 :::
 
 With some vue-esque directives and custom attributes, I've got all the logic I need, and that logic is contained in the template file itself. So sexy.
-
-### The Best Bundler: Rollup
-
-It's worth noting that I am using Rollup to compile and split the CSS/JS files. I will always advocate using Rollup over Webpack, as the syntax is lightyears easier to grok and configure.
-
-Here is my entire Rollup configuration file:
-
-::: codeblock
-```js
-import commonjs from '@rollup/plugin-commonjs'
-import postcss from 'rollup-plugin-postcss'
-import resolve from '@rollup/plugin-node-resolve'
-import { terser } from 'rollup-plugin-terser'
-
-const prod = process.env.NODE_ENV == 'production'
-
-export default {
-  input: 'src/_bundle/main.js',
-  output: {
-    sourcemap: false,
-    format: 'iife',
-    name: 'main',
-    file: 'dist/assets/main.bundle.js',
-  },
-  plugins: [
-    postcss({
-      extract: 'dist/assets/main.bundle.css',
-      minimize: prod,
-    }),
-    resolve({
-      browser: true,
-    }),
-    commonjs(),
-    prod && terser(),
-  ],
-  watch: {
-    clearScreen: false,
-  },
-}
-```
-:::
 
 ## Inspiration
 

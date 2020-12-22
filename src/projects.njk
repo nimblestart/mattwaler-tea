@@ -12,13 +12,12 @@ paragraph:
 {% block body %}
 
   {{ hero(
-    image = '/assets/projects.jpg',
     eyebrow = 'Get a load of all of these',
     heading = heading,
     paragraph = paragraph
   ) }}
 
-  <section class="container max-w-screen-lg mt-16">
+  <section class="container mt-16">
     {% for item in collections.projects %}
       <article class="sm:flex items-center pt-12 mt-12 {{ 'border-t' if not loop.first }}">
         <div
@@ -47,5 +46,7 @@ paragraph:
       </article>
     {% endfor %}
   </section>
+
+  {% include 'contact-cta.njk' %}
 
 {% endblock body %}

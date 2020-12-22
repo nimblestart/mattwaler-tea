@@ -20,12 +20,12 @@ paragraph: There hasn't been a page at this URL in over 40 years!
 {% block body %}
 
   {{ hero(
-    image = '/assets/ruh-roh.jpg',
     eyebrow = 'Ruh roh Shaggy!',
     heading = heading,
     paragraph = paragraph,
     belowParagraph = homeButton
   ) }}
 
+  {% include 'contact-cta.njk' %}
 
 {% endblock %}

@@ -7,9 +7,9 @@
     "build:11ty": "eleventy --quiet",
     "build:webpack": "webpack",
     "clean": "rm -rf dist",
-    "start": "npm-run-all clean build:* -p start:*",
-    "start:11ty": "eleventy --serve --quiet",
-    "start:webpack": "webpack --watch"
+    "dev": "npm-run-all clean build:* -p dev:*",
+    "dev:11ty": "eleventy --serve --quiet",
+    "dev:webpack": "webpack --watch"
   },
   "prettier": {
     "semi": false,
@@ -25,7 +25,6 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.9.0",
-    "@11ty/eleventy-plugin-rss": "^1.0.9",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "@tailwindcss/forms": "^0.2.1",
     "autoprefixer": "^10.1.0",

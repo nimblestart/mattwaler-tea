@@ -8,12 +8,11 @@ module.exports = {
     debugScreens: {
       position: ['bottom', 'right'],
     },
-    extend: {
-      spacing: {
-        '72': '18rem',
-        '84': '21rem',
-        '96': '24rem',
-      },
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
     },
   },
   plugins: [

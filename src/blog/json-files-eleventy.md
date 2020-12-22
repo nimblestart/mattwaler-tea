@@ -3,7 +3,6 @@ title: Exporting JSON with Eleventy
 description:
   You can leverage Eleventy to output any file type you want. In this post, I show you how to export JSON so it can be consumed dynamically in the client.
 date: 2020-03-26
-image: /assets/json-bourne.jpg
 ---
 
 ## The sky's the limit

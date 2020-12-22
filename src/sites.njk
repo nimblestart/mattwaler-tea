@@ -10,13 +10,12 @@ description: Below you will find a list of some of the sites I've helped design,
 {% block body %}
 
   {{ hero(
-    image = '/assets/sites.jpg',
     eyebrow = 'Check out all of these',
     heading = heading,
     paragraph = description
   ) }}
 
-  <section class="container max-w-screen-lg mt-16">
+  <section class="container mt-16">
     {% for site in collections.sites %}
       <article class="sm:flex items-center pt-12 mt-12 {{ 'border-t' if not loop.first }}">
         <div
@@ -45,4 +44,7 @@ description: Below you will find a list of some of the sites I've helped design,
       </article>
     {% endfor %}
   </section>
+
+  {% include 'contact-cta.njk' %}
+
 {% endblock body %}
