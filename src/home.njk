@@ -39,7 +39,7 @@ if (!isSiteAwesome || !didMattBuildIt) {
     class="fixed top-0 right-0 m-8 bg-white py-6 px-4 shadow-lg rounded-lg z-50 max-w-lg"
   >
     <div class="flex items-center">
-      <span class="flex-none w-16 text-teal-500 rounded-full">
+      <span class="flex-none w-16 text-green-600 rounded-full">
         {% include 'icons/check.svg' %}
       </span>
       <div class="ml-4">
@@ -114,18 +114,18 @@ if (!isSiteAwesome || !didMattBuildIt) {
       </h2>
       <p class="text-gray-700 mt-1 italic text-sm sm:text-lg">I can make myself useful in a whole number of ways.</p>
       <div class="mt-12 grid gap-12 sm:gap-16 sm:mt-24 sm:grid-cols-3 lg:gap-24">
-        {% for skill in skills %}
+        {% for skill in collections.skill %}
           <div class="flex flex-col">
-            <span class="w-8 h-8 md:w-16 md:h-16 mx-auto animate-grow {{ skill.color }}">
-              {% include 'icons/' + skill.icon + '.svg' %}
+            <span class="w-8 h-8 md:w-16 md:h-16 mx-auto animate-grow {{ skill.data.color }}">
+              {% include 'icons/' + skill.data.icon + '.svg' %}
             </span>
-            <h2 class="mt-4 font-extrabold leading-none text-xl md:mt-6 md:text-2xl">{{ skill.name }}</h2>
+            <h2 class="mt-4 font-extrabold leading-none text-xl md:mt-6 md:text-2xl">{{ skill.data.name }}</h2>
             <p class="mt-2 md:mt-3 text-sm md:text-base text-gray-600">
-              {{ skill.description }}
+              {{ skill.data.description }}
             </p>
             <span class="h-4"></span>
-            <a class="mt-auto flex justify-center items-center font-extrabold {{ skill.color }}" href="{{ skill.link }}">
-              {{ skill.linkText }}
+            <a class="mt-auto flex justify-center items-center font-extrabold {{ skill.data.color }}" href="{{ skill.data.link }}">
+              {{ skill.data.linkText }}
               <span class="ml-1 w-4 h-4">
                 {% include 'icons/arrow.svg' %}
               </span>
