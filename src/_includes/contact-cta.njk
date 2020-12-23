@@ -12,18 +12,22 @@ if (!isSiteAwesome) {
 {% endhighlight %}
 {% endset %}
 
- <section class="container grid-cols-1 grid gap-8 pt-12 sm:pt-24 items-center md:gap-16 lg:grid-cols-2 lg:pt-32 xl:gap-24">
+<section class="container flex flex-wrap items-center section-spacing">
+
   {# Code Snippet #}
-  <div class="bg-gray-900 p-4 text-white rounded-lg shadow-lg text-sm sm:text-base">
+  <div class="w-full lg:w-1/2 bg-gray-900 p-4 text-white rounded-lg shadow-lg text-sm sm:text-base">
     <div class="space-x-2 flex items-center">
       <div class="rounded-full w-3 h-3 bg-red-500"></div>
       <div class="rounded-full w-3 h-3 bg-yellow-500"></div>
       <div class="rounded-full w-3 h-3 bg-green-500"></div>
     </div>
-    {{ code | safe }}
+    <div class="py-6">
+      {{ code | safe }}
+    </div>
   </div>
+
   {# Contact Content #}
-  <div class="text-center lg:text-left">
+  <div class="w-full max-w-2xl mx-auto mt-12 text-center lg:mt-0 lg:w-1/2 lg:pl-16 lg:text-left">
     <h3 class="relative inline text-2xl font-extrabold leading-tight lg:text-3xl">
       Do you want to build a website?
       <span class="w-6 h-6 absolute lg:hidden animate-bounce" style="top: -16px; left: -32px;">

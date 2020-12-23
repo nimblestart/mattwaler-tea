@@ -1,26 +1,7 @@
----
-permalink: 'index.html'
-title: Home
-description:
-  I am Matt Waler, a freelance fullstack developer providing fullstack consulting and development.
----
+{% extends "page.njk" %}
 
-{% set code %}
-{% highlight "js" %}
-let isSiteAwesome = false
-let didMattBuildIt = false
-
-function contactMatt(message) {
-  return alert(message)
-}
-
-if (!isSiteAwesome || !didMattBuildIt) {
-  return contactMatt('Contact Matt!')
-}
-{% endhighlight %}
-{% endset %}
-
-{% extends 'page.njk' %}
+{% set title = "Web Developer" %}
+{% set description = "Matt Waler is a freelance web developer providing consulting, instruction, and development services." %}
 
 {% block body %}
 
@@ -49,6 +30,7 @@ if (!isSiteAwesome || !didMattBuildIt) {
     </div>
   </section>
 
+  {# Hero #}
   <section class="gradient-purple text-white">
     <div class="container py-8 text-center relative lg:py-16 lg:text-left">
       <div
@@ -83,17 +65,14 @@ if (!isSiteAwesome || !didMattBuildIt) {
     </div>
 
   </section>
-
-  {# Waves & Offset Correction  #}
   <span class="z-0 w-full h-16 block gradient-purple text-gray-100">
     {% include 'icons/waves.svg' %}
   </span>
   <div role="presentation" class="hidden lg:block" style="height: 22px;"></div>
   <div role="presentation" class="hidden xl:block" style="height: 56px;"></div>
 
-
   {# What I Do #}
-  <section class="relative">
+  <section class="relative section-spacing">
 
     {# Blobs #}
     <div class="z-0 opacity-25 text-gray-300">
@@ -106,13 +85,13 @@ if (!isSiteAwesome || !didMattBuildIt) {
     </div>
 
     {# Content #}
-    <div class="container text-center pt-12 sm:pt-24 lg:pt-32">
+    <div class="container text-center">
       <h2 class="text-3xl leading-tight font-extrabold sm:text-4xl">
         Jack of all trades.
         <br class="sm:hidden">
         Master of some.
       </h2>
-      <p class="text-gray-700 mt-1 italic text-sm sm:text-lg">I can make myself useful in a whole number of ways.</p>
+      <p class="text-gray-700 mt-1 italic sm:text-lg">I can make myself useful in a whole number of ways.</p>
       <div class="mt-12 grid gap-12 sm:gap-16 sm:mt-24 sm:grid-cols-3 lg:gap-24">
         {% for skill in collections.skill %}
           <div class="flex flex-col">
@@ -120,7 +99,7 @@ if (!isSiteAwesome || !didMattBuildIt) {
               {% include 'icons/' + skill.data.icon + '.svg' %}
             </span>
             <h2 class="mt-4 font-extrabold leading-none text-xl md:mt-6 md:text-2xl">{{ skill.data.name }}</h2>
-            <p class="mt-2 md:mt-3 text-sm md:text-base text-gray-600">
+            <p class="mt-2 md:mt-3 text-gray-600">
               {{ skill.data.description }}
             </p>
             <span class="h-4"></span>
