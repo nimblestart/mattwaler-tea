@@ -1,6 +1,7 @@
 ---
 name: Development
-description: I can build single page applications, full-blown CMS projects, and even some native applications.
+description:
+  I can build single page applications, fullstack CMS projects, and everything in between.
 icon: development
 color: text-indigo-500
 link: /projects/

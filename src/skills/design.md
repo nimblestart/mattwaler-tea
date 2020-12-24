@@ -1,6 +1,7 @@
 ---
 name: Design
-description: I can whip up both wireframes and high-fidelity designs in Sketch, Figma, or whatever design tool you prefer.
+description:
+  I can whip up wireframes and high-fidelity designs in Sketch, Figma, you name it.
 icon: design
 color: text-blue-500
 link: /sites/
