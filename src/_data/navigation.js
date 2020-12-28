@@ -2,7 +2,6 @@ module.exports = {
   internal: [
     { name: 'Contact', link: '/contact/' },
     { name: 'Sites', link: '/sites/' },
-    { name: 'Projects', link: '/projects/' },
     { name: 'Blog', link: '/blog/' },
   ],
   external: [
